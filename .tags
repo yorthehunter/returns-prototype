@@ -1,0 +1,81 @@
+base-rtv	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-rtv: #FFDB00;$/;"	function	line:1
+base-clr	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-clr: #37E3E4;$/;"	function	line:2
+base-dmg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-dmg: #555555;$/;"	function	line:3
+base-lg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-lg:  #D50000;$/;"	function	line:4
+base-md	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-md:  #0000FF;$/;"	function	line:5
+base-sm	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-sm:  #FF00FF;$/;"	function	line:6
+base-xs	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-xs:  #00FF00;$/;"	function	line:7
+base-acc	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$base-acc: #FF8000;$/;"	function	line:8
+gold	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$gold: rgba(140, 111, 75, 1);$/;"	function	line:11
+yellow	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$yellow: rgba(233, 215, 23, 1);$/;"	function	line:17
+red	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$red: rgba(255, 92, 97, 1);$/;"	function	line:21
+red-20	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$red-20: #FFDEDF;$/;"	function	line:22
+red-10	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$red-10: #FFEEEF;$/;"	function	line:23
+red-5	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$red-5: rgba(255, 92, 97, .05);$/;"	function	line:24
+red-2	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$red-2: rgba(255, 92, 97, .02);$/;"	function	line:25
+light-coral	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$light-coral: rgba(253, 220, 195, 1);$/;"	function	line:27
+light-coral-50	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$light-coral-50: #FEEDE1;$/;"	function	line:28
+mint	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint: rgba(137, 198, 189, 1);$/;"	function	line:30
+mint-20	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-20: #E7F3F2;$/;"	function	line:31
+mint-10	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-10: #F3F9F8;$/;"	function	line:32
+mint-green	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green: rgba(137, 198, 189, .7);$/;"	function	line:33
+dark-mint	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$dark-mint: #69BDB0;$/;"	function	line:36
+dark-mint-20	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$dark-mint-20: #E1F2EF;$/;"	function	line:37
+dark-mint-10	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$dark-mint-10: #F0F8F7;$/;"	function	line:38
+warm-gray	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$warm-gray: #847c77;$/;"	function	line:40
+warm-gray-80	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$warm-gray-80: #9D9693;$/;"	function	line:41
+warm-gray-60	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$warm-gray-60: #B5B0AE;$/;"	function	line:42
+warm-gray-40	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$warm-gray-40: #CECBC9;$/;"	function	line:43
+warm-gray-20	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$warm-gray-20: #E6E5E4;$/;"	function	line:44
+sand	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$sand: #F3EFEC;$/;"	function	line:46
+dark-sand	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$dark-sand: darken($sand, 5%);$/;"	function	line:47
+light-sand	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$light-sand: rgb(247, 245, 242);$/;"	function	line:48
+off-white	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$off-white: #FEFCFB;$/;"	function	line:51
+dark-gray	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$dark-gray: darken($warm-gray, 20%);$/;"	function	line:55
+gray	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$gray: #696C71;$/;"	function	line:57
+mint-green-tint-hi	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green-tint-hi: lighten($mint-green, 23%);$/;"	function	line:61
+mint-green-tint-low	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green-tint-low: lighten($mint-green, 15%);$/;"	function	line:62
+mint-green-shade	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green-shade: darken($mint-green, 10%);$/;"	function	line:63
+mint-green-shade-low	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green-shade-low: darken($mint-green, 20%);$/;"	function	line:64
+mint-green-shade-extra-dark	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/_colors.scss	/^$mint-green-shade-extra-dark: darken($mint-green, 30%);$/;"	function	line:65
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--main"><\/div>$/;"	function	line:7
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--rtv"><\/div>$/;"	function	line:8
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--dmg"><\/div>$/;"	function	line:9
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--lg"><\/div>$/;"	function	line:10
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--md"><\/div>$/;"	function	line:11
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--sm"><\/div>$/;"	function	line:12
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--xs"><\/div>$/;"	function	line:13
+div	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<div class="backdrop backdrop--overlay backdrop--acc"><\/div>$/;"	function	line:14
+ul	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^<ul class="returned-fix-list">$/;"	function	line:16
+li	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^  <li class="returned-item returned-item--1">$/;"	function	line:17
+li	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^  <li class="returned-item returned-item--2">$/;"	function	line:20
+li	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv">$/;"	function	line:23
+li	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^  <li class="returned-item returned-item--4">$/;"	function	line:26
+li	/Users/briancleveland/work/yorthehunter/returns-prototype/returns-prototype.html	/^  <li class="returned-item returned-item--5">$/;"	function	line:29
+.backdrop	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.backdrop {$/;"	function	line:1
+&--overlay	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--overlay {$/;"	function	line:9
+&--rtv	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--rtv { background-color: $base-rtv; }$/;"	function	line:19
+&--clr	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--clr { background-color: $base-clr; }$/;"	function	line:20
+&--dmg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--dmg { background-color: $base-dmg; }$/;"	function	line:21
+&--lg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--lg  { background-color: $base-lg; }$/;"	function	line:22
+&--md	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--md  { background-color: $base-md; }$/;"	function	line:23
+&--sm	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--sm  { background-color: $base-sm; }$/;"	function	line:24
+&--xs	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--xs  { background-color: $base-xs; }$/;"	function	line:25
+&--acc	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--acc { background-color: $base-acc; }$/;"	function	line:26
+.returned-fix-list	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.returned-fix-list {$/;"	function	line:29
+.returned-item	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.returned-item {$/;"	function	line:33
+&--rtv	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--rtv { border: 3px solid $base-rtv; }$/;"	function	line:43
+&--clr	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--clr { border: 3px solid $base-clr; }$/;"	function	line:44
+&--dmg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--dmg { border: 3px solid $base-dmg; }$/;"	function	line:45
+&--lg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--lg  { border: 3px solid $base-lg; }$/;"	function	line:46
+&--md	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--md  { border: 3px solid $base-md; }$/;"	function	line:47
+&--sm	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--sm  { border: 3px solid $base-sm; }$/;"	function	line:48
+&--xs	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--xs  { border: 3px solid $base-xs; }$/;"	function	line:49
+&--acc	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--acc { border: 3px solid $base-acc; }$/;"	function	line:50
+&--1	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--1 { background-image: url("\/assets\/images\/item_1.png"); }$/;"	function	line:52
+&--2	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--2 { background-image: url("\/assets\/images\/item_2.png"); }$/;"	function	line:53
+&--3	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--3 { background-image: url("\/assets\/images\/item_3.png"); }$/;"	function	line:54
+&--4	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--4 { background-image: url("\/assets\/images\/item_4.png"); }$/;"	function	line:55
+&--5	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--5 { background-image: url("\/assets\/images\/item_5.png"); }$/;"	function	line:56
+img	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  img {$/;"	function	line:58
+&--emphasized	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--emphasized {$/;"	function	line:63

@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+.backdrop	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.backdrop {$/;"	function	line:1
+&--overlay	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--overlay {$/;"	function	line:9
+&--rtv	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--rtv { background-color: $base-rtv; }$/;"	function	line:19
+&--clr	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--clr { background-color: $base-clr; }$/;"	function	line:20
+&--dmg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--dmg { background-color: $base-dmg; }$/;"	function	line:21
+&--lg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--lg  { background-color: $base-lg; }$/;"	function	line:22
+&--md	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--md  { background-color: $base-md; }$/;"	function	line:23
+&--sm	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--sm  { background-color: $base-sm; }$/;"	function	line:24
+&--xs	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--xs  { background-color: $base-xs; }$/;"	function	line:25
+&--acc	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--acc { background-color: $base-acc; }$/;"	function	line:26
+.returned-fix-list	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.returned-fix-list {$/;"	function	line:29
+.returned-item	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^.returned-item {$/;"	function	line:33
+&--rtv	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--rtv { border: 3px solid $base-rtv; }$/;"	function	line:43
+&--clr	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--clr { border: 3px solid $base-clr; }$/;"	function	line:44
+&--dmg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--dmg { border: 3px solid $base-dmg; }$/;"	function	line:45
+&--lg	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--lg  { border: 3px solid $base-lg; }$/;"	function	line:46
+&--md	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--md  { border: 3px solid $base-md; }$/;"	function	line:47
+&--sm	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--sm  { border: 3px solid $base-sm; }$/;"	function	line:48
+&--xs	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--xs  { border: 3px solid $base-xs; }$/;"	function	line:49
+&--acc	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--acc { border: 3px solid $base-acc; }$/;"	function	line:50
+&--1	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--1 { background-image: url("\/assets\/images\/item_1.png"); }$/;"	function	line:52
+&--2	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--2 { background-image: url("\/assets\/images\/item_2.png"); }$/;"	function	line:53
+&--3	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--3 { background-image: url("\/assets\/images\/item_3.png"); }$/;"	function	line:54
+&--4	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--4 { background-image: url("\/assets\/images\/item_4.png"); }$/;"	function	line:55
+&--5	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--5 { background-image: url("\/assets\/images\/item_5.png"); }$/;"	function	line:56
+img	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  img {$/;"	function	line:58
+&--emphasized	/Users/briancleveland/work/yorthehunter/returns-prototype/_sass/site/modules/_returns.scss	/^  &--emphasized {$/;"	function	line:63
