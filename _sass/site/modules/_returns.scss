@@ -7,13 +7,17 @@
   background-color: #FFFFFF;
 
   &--overlay {
-    transform: translateX(-3000px) skew(-45deg);
     transition: all 1s;
     position: absolute;
-    left:   -50%;
-    right:  -50%;
-    top:    -50%;
-    bottom: -50%;
+    height: 15vh;
+    left:   0;
+    right:  0;
+    top:    -100vh;
+    bottom: 0;
+
+    &.active {
+      top: 85vh;
+    }
   }
 
   &--rtv { background-color: $base-rtv; }
@@ -28,6 +32,7 @@
 
 .returned-fix-list {
   @extend %list-flex, %pos-rel, %z1;
+  height: 100vh;
 }
 
 .returned-item {
@@ -35,19 +40,14 @@
   position: relative;
   background-position: center;
   background-size: cover;
-  min-height: 600px;
-  max-height: 640px;
+  min-height: 70vh;
+  max-height: 85vh;
   opacity: 0.3;
   transition: all 0.5s;
 
-  &--rtv { border: 3px solid $base-rtv; }
-  &--clr { border: 3px solid $base-clr; }
-  &--dmg { border: 3px solid $base-dmg; }
-  &--lg  { border: 3px solid $base-lg; }
-  &--md  { border: 3px solid $base-md; }
-  &--sm  { border: 3px solid $base-sm; }
-  &--xs  { border: 3px solid $base-xs; }
-  &--acc { border: 3px solid $base-acc; }
+  &:hover {
+    opacity: 1.0;
+  }
 
   &--1 { background-image: url("/assets/images/item_1.png"); }
   &--2 { background-image: url("/assets/images/item_2.png"); }
@@ -61,9 +61,30 @@
   }
 
   &--emphasized {
-    min-height: 700px;
+    min-height: 90vh;
     min-width: 480px;
     opacity: 1;
+    overflow: visible;
+
+    &.returned-item--rtv { border: 3px solid $base-rtv; }
+    &.returned-item--clr { border: 3px solid $base-clr; }
+    &.returned-item--dmg { border: 3px solid $base-dmg; }
+    &.returned-item--lg  { border: 3px solid $base-lg; }
+    &.returned-item--md  { border: 3px solid $base-md; }
+    &.returned-item--sm  { border: 3px solid $base-sm; }
+    &.returned-item--xs  { border: 3px solid $base-xs; }
+    &.returned-item--acc { border: 3px solid $base-acc; }
+  }
+
+  &__info {
+    @extend %text-c;
+    position: absolute;
+    bottom: -15vh;
+    left: 0;
+    right: 0;;
+    height: 15vh;
+    line-height: 11vh;
+    vertical-align: middle;
   }
 
 }
