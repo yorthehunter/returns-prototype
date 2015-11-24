@@ -14,21 +14,21 @@ permalink: /returns-prototype/
 
 
 <ul class="returned-items-list">
-  <li class="returned-item returned-item--1" data-item-status="out">
+  <li class="returned-item returned-item--1" data-item-status="lg">
 
   </li>
-  <li class="returned-item returned-item--2" data-item-status="out">
+  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" data-item-status="sold">
+
+  </li>
+  <li class="returned-item returned-item--2" data-item-status="md">
     <header class="returned-item__info">
 
   </li>
-  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv" data-item-status="rtv">
+  <li class="returned-item returned-item--3" data-item-status="rtv">
     <h2 class="returned-item__info">
       <span class="returned-item__location">R T V</span>
       <span class="returned-item__type">ALL</span>
     </h2>
-  </li>
-  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" data-item-status="sold">
-
   </li>
   <li class="returned-item returned-item--5 returned-item--done returned-item--sold" data-item-status="sold">
 
@@ -38,4 +38,41 @@ permalink: /returns-prototype/
 </footer>
 
 <script type="text/javascript">
+  $(function(){
+    $(".returned-item").each(function (){
+      status = $(this).data("item-status");
+      $(this).addClass("returned-item--"+status);
+    })
+
+    $(".returned-item--done").appendTo(".returned-items-list");
+
+    if ($(".returned-item--current").length == 0) {
+      $(".returned-item").addClass("returned-item--origin");
+    }
+
+    $(".returned-item").click(function(){
+      this_status = $(this).data("item-status");
+      if (this_status == ("out" || "sold")){
+        $(this).data("item-status", "in").removeClass("returned-item--sold returned-item--out").addClass("returned-item--in");
+      }
+      else {
+        $(this).addClass("returned-item--"+this_status);
+      }
+
+      $(".returned-item").removeClass("returned-item--origin").removeClass("returned-item--current");
+      $(this).addClass("returned-item--current");
+      color_banner();
+    });
+
+  });
+
+  function color_banner() {
+    current_status = $(".returned-item--current").data("item-status");
+    $(".returns-banner").removeClass("current returns-banner--in returns-banner--out returns-banner--sold returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--clr returns-banner--dmg");
+
+    setTimeout(function(){
+      $(".returned-item--current").addClass("returned-item--" + current_status);
+      $(".returns-banner").addClass("returns-banner--"+current_status+" current");
+    }, 500);
+  }
 </script>

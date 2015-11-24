@@ -68,7 +68,6 @@ $return-item-title-height: 12vh;
 .returned-item {
   overflow: hidden;
   position: relative;
-
   min-height: 70vh;
   max-height: (100vh - ($return-item-title-height * 1.5));
   transition: all 0.5s;
@@ -92,12 +91,22 @@ $return-item-title-height: 12vh;
     }
   }
 
+  &--origin {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
   img {
     max-width: 480px;
     transform: translateX(-25%);
   }
 
-  &--emphasized {
+  &--current {
     min-height: (100vh - $return-item-title-height);
     min-width: 480px;
     overflow: visible;
@@ -119,10 +128,11 @@ $return-item-title-height: 12vh;
   &__info {
     @extend %text-c, %z1, %m0 !optional;
     position: absolute;
-    bottom: -$return-item-title-height;
+    bottom: -($return-item-title-height - 1);
     left: 0;
     right: 0;
-    line-height: $return-item-title-height;
+    height: ($return-item-title-height - 1);
+    line-height: ($return-item-title-height - 1);
   }
 
   &__location {
