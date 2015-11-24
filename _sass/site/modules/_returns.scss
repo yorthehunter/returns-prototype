@@ -63,12 +63,6 @@ $return-item-title-height: 12vh;
     }
   }
 
-  &--1::after { background-image: url("/assets/images/item_1.png"); }
-  &--2::after { background-image: url("/assets/images/item_2.png"); }
-  &--3::after { background-image: url("/assets/images/item_3.png"); }
-  &--4::after { background-image: url("/assets/images/item_4.png"); }
-  &--5::after { background-image: url("/assets/images/item_5.png"); }
-
   img {
     max-width: 480px;
     transform: translateX(-25%);

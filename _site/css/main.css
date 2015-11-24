@@ -4572,16 +4572,6 @@ stylesheets
     bottom: 0; }
   .returned-item:hover::after {
     opacity: 1; }
-  .returned-item--1::after {
-    background-image: url("/assets/images/item_1.png"); }
-  .returned-item--2::after {
-    background-image: url("/assets/images/item_2.png"); }
-  .returned-item--3::after {
-    background-image: url("/assets/images/item_3.png"); }
-  .returned-item--4::after {
-    background-image: url("/assets/images/item_4.png"); }
-  .returned-item--5::after {
-    background-image: url("/assets/images/item_5.png"); }
   .returned-item img {
     max-width: 480px;
     transform: translateX(-25%); }
