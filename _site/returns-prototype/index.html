@@ -18,7 +18,15 @@
 
   <body>
     <article>
-  <div class="backdrop backdrop--main"></div>
+  <style>
+  .returned-item--1::after { background-image: url(/returns-prototype/assets/images/item_1.png); }
+  .returned-item--2::after { background-image: url(/returns-prototype/assets/images/item_2.png); }
+  .returned-item--3::after { background-image: url(/returns-prototype/assets/images/item_3.png); }
+  .returned-item--4::after { background-image: url(/returns-prototype/assets/images/item_4.png); }
+  .returned-item--5::after { background-image: url(/returns-prototype/assets/images/item_5.png); }
+</style>
+
+<div class="backdrop backdrop--main"></div>
 <div class="backdrop backdrop--overlay backdrop--rtv active"></div>
 <div class="backdrop backdrop--overlay backdrop--dmg"></div>
 <div class="backdrop backdrop--overlay backdrop--lg"></div>
@@ -28,7 +36,7 @@
 <div class="backdrop backdrop--overlay backdrop--acc"></div>
 
 <ul class="returned-fix-list">
-  <li class="returned-item returned-item--1" style="background-image: url(/returns-prototype/assets/images/item_1.png);">
+  <li class="returned-item returned-item--1">
     <header class="returned-item__info">
       <h2 class="returned-item-heading">
         <strong class="returned-item__status"></strong>
@@ -36,7 +44,7 @@
       </h2>
     </header>
   </li>
-  <li class="returned-item returned-item--2" style="background-image: url(/returns-prototype/assets/images/item_2.png);">
+  <li class="returned-item returned-item--2">
     <header class="returned-item__info">
       <h2 class="returned-item-heading">
         <strong class="returned-item__status"></strong>
@@ -44,7 +52,7 @@
       </h2>
     </header>
   </li>
-  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv" style="background-image: url(/returns-prototype/assets/images/item_3.png);">
+  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv">
     <header class="returned-item__info">
       <h2 class="returned-item-heading">
         <strong class="returned-item__status">R T V</strong>
@@ -52,7 +60,7 @@
       </h2>
     </header>
   </li>
-  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" style="background-image: url(/returns-prototype/assets/images/item_4.png);">
+  <li class="returned-item returned-item--4 returned-item--done returned-item--sold">
     <header class="returned-item__info">
       <h2 class="returned-item-heading">
         <strong class="returned-item__status">SOLD</strong>
@@ -60,7 +68,7 @@
       </h2>
     </header>
   </li>
-  <li class="returned-item returned-item--5 returned-item--done returned-item--sold" style="background-image: url(/returns-prototype/assets/images/item_5.png);">
+  <li class="returned-item returned-item--5 returned-item--done returned-item--sold">
     <header class="returned-item__info">
       <h2 class="returned-item-heading">
         <strong class="returned-item__status">SOLD</strong>
