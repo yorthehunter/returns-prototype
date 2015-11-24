@@ -353,7 +353,7 @@ h1, .h1 {
   line-height: 3rem;
   /* 2 */ }
 
-.returned-item--emphasized > .returned-item__info > .returned-item-heading, h2, .h2 {
+h2, .h2 {
   font-size: 2.36421rem;
   /* 1 */
   margin-bottom: 2rem;
@@ -382,7 +382,7 @@ dl, ol, ul {
   line-height: 2rem;
   /* 2 */ }
 
-.returned-item__info > .returned-item-heading, h6, .h6 {
+h6, .h6 {
   font-size: 1rem;
   /* 1 */
   margin-bottom: 0;
@@ -594,7 +594,7 @@ small,
 .text-c {
   text-align: center !important; }
 
-.returned-fix-list li.list-header,
+.returned-items-list li.list-header,
 .list-flex li.list-header,
 .text-r {
   text-align: right  !important; }
@@ -605,11 +605,11 @@ small,
 .dark {
   color: black; }
 
-.returned-item__info .returned-item__location,
+.returned-item__type,
 .thin {
   font-weight: 200; }
 
-.returned-item__info .returned-item__status,
+.returned-item__location,
 .thick {
   font-weight: 800; }
 
@@ -675,7 +675,7 @@ small,
     line-height: 3rem;
     /* 2 */ }
 
-  .returned-item--emphasized > .returned-item__info > .returned-item-heading, .h2 {
+  .h2 {
     font-size: 1.90662rem;
     /* 1 */
     margin-bottom: 2rem;
@@ -703,7 +703,7 @@ small,
     line-height: 2rem;
     /* 2 */ }
 
-  .returned-item--emphasized > .returned-item__info > .returned-item-heading, .h2 {
+  .h2 {
     font-size: 1.5376rem;
     /* 1 */
     margin-bottom: 1rem;
@@ -1648,18 +1648,18 @@ ways to extend a `form` or `input` to make life easier.
   ```
 
   */
-.returned-fix-list,
+.returned-items-list,
 .list-flex,
 .flex-container {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex; }
-  .returned-fix-list li,
+  .returned-items-list li,
   .list-flex li,
-  .returned-fix-list .flex-item,
+  .returned-items-list .flex-item,
   .list-flex .flex-item,
-  .flex-container .returned-fix-list li,
-  .returned-fix-list .flex-container li,
+  .flex-container .returned-items-list li,
+  .returned-items-list .flex-container li,
   .flex-container .list-flex li,
   .list-flex .flex-container li,
   .flex-container .flex-item {
@@ -1667,37 +1667,37 @@ ways to extend a `form` or `input` to make life easier.
     margin-right: auto;
     -webkit-flex: 1;
     flex: 1; }
-  .returned-fix-list .flex-left,
+  .returned-items-list .flex-left,
   .list-flex .flex-left,
   .flex-container .flex-left {
     margin-left: 0; }
-  .returned-fix-list .flex-0,
+  .returned-items-list .flex-0,
   .list-flex .flex-0,
   .flex-container .flex-0 {
     -webkit-flex: 0;
     flex: 0; }
-  .returned-fix-list li,
+  .returned-items-list li,
   .list-flex li,
-  .returned-fix-list .flex-2,
+  .returned-items-list .flex-2,
   .list-flex .flex-2,
-  .flex-container .returned-fix-list li,
-  .returned-fix-list .flex-container li,
+  .flex-container .returned-items-list li,
+  .returned-items-list .flex-container li,
   .flex-container .list-flex li,
   .list-flex .flex-container li,
   .flex-container .flex-2 {
     -webkit-flex: 2;
     flex: 2; }
-  .returned-fix-list .flex-3,
+  .returned-items-list .flex-3,
   .list-flex .flex-3,
   .flex-container .flex-3 {
     -webkit-flex: 3;
     flex: 3; }
-  .returned-fix-list li.list-header,
+  .returned-items-list li.list-header,
   .list-flex li.list-header,
-  .returned-fix-list .flex-4,
+  .returned-items-list .flex-4,
   .list-flex .flex-4,
-  .flex-container .returned-fix-list li.list-header,
-  .returned-fix-list .flex-container li.list-header,
+  .flex-container .returned-items-list li.list-header,
+  .returned-items-list .flex-container li.list-header,
   .flex-container .list-flex li.list-header,
   .list-flex .flex-container li.list-header,
   .flex-container .flex-4 {
@@ -1729,7 +1729,7 @@ ways to extend a `form` or `input` to make life easier.
   ```
 
   */
-.returned-fix-list,
+.returned-items-list,
 .list-flex {
   list-style: none;
   padding-left: 0; }
@@ -1871,9 +1871,9 @@ development environment.
   margin-left: auto;
   margin-right: auto; }
 
-.returned-fix-list,
-.list-flex, .returned-fix-list li,
-.list-flex li, .returned-item--emphasized > .returned-item__info > .returned-item-heading, .returned-item__info > .returned-item-heading,
+.returned-items-list,
+.list-flex, .returned-items-list li,
+.list-flex li, .returned-item__info,
 .m0 {
   margin-top: 0rem !important;
   margin-bottom: 0rem !important; }
@@ -1967,7 +1967,7 @@ development environment.
 .ml0 {
   margin-left: 0rem !important; }
 
-.returned-item__info .returned-item__location,
+.returned-item__type,
 .ml1 {
   margin-left: 1rem; }
 
@@ -2200,7 +2200,7 @@ development environment.
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
 
-.returned-fix-list li.list-header,
+.returned-items-list li.list-header,
 .list-flex li.list-header,
 .px1 {
   padding-left: 0.5rem;
@@ -2267,10 +2267,11 @@ development environment.
   </div>
   ```
   */
+.returns-banner::after,
 .pos-abs {
   position: absolute; }
 
-.returned-fix-list,
+.returned-items-list,
 .pos-rel {
   position: relative; }
 
@@ -2289,6 +2290,7 @@ development environment.
 .pos-r {
   right: 0; }
 
+.returns-banner::after,
 .pos-all {
   top: 0;
   left: 0;
@@ -2300,7 +2302,7 @@ development environment.
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.returned-fix-list, .returned-item__info,
+.returned-items-list, .returned-item__info,
 .z1 {
   z-index: 1; }
 
@@ -4517,40 +4519,37 @@ stylesheets
   .highlight .il {
     color: #099; }
 
-.backdrop {
+.returns-banner {
+  transition: all 0.6s;
   position: absolute;
+  z-index: 0;
   left: 0;
-  right: 0;
-  top: 0;
+  right: 100vw;
   bottom: 0;
-  background-color: #FFFFFF; }
-  .backdrop--overlay {
-    position: absolute;
-    height: 18vh;
-    left: 0;
-    right: 0;
-    top: -100vh;
-    bottom: 0; }
-    .backdrop--overlay.active {
-      top: 82vh; }
-  .backdrop--rtv {
+  height: 18vh; }
+  .returns-banner.current {
+    right: 0; }
+  .returns-banner::after {
+    content: "";
+    transition: all 0.6s; }
+  .returns-banner--rtv::after {
     background-color: #FFDB00; }
-  .backdrop--clr {
+  .returns-banner--clr::after {
     background-color: #37E3E4; }
-  .backdrop--dmg {
+  .returns-banner--dmg::after {
     background-color: #555555; }
-  .backdrop--lg {
+  .returns-banner--lg::after {
     background-color: #D50000; }
-  .backdrop--md {
+  .returns-banner--md::after {
     background-color: #0000FF; }
-  .backdrop--sm {
+  .returns-banner--sm::after {
     background-color: #FF00FF; }
-  .backdrop--xs {
+  .returns-banner--xs::after {
     background-color: #00FF00; }
-  .backdrop--acc {
+  .returns-banner--acc::after {
     background-color: #FF8000; }
 
-.returned-fix-list {
+.returned-items-list {
   height: 100vh; }
 
 .returned-item {
@@ -4597,34 +4596,9 @@ stylesheets
       border: 3px solid #00FF00; }
     .returned-item--emphasized.returned-item--acc {
       border: 3px solid #FF8000; }
-    .returned-item--emphasized > .returned-item__info {
-      bottom: -11vh;
-      left: 0;
-      right: 0;
-      height: 11vh;
-      background: none; }
-      .returned-item--emphasized > .returned-item__info > .returned-item-heading {
-        line-height: 11vh; }
-      .returned-item--emphasized > .returned-item__info .returned-item__location {
-        display: inline; }
-  .returned-item.returned-item--done .returned-item__info {
-    color: #FFFFFF; }
-  .returned-item.returned-item--emphasized .returned-item__info {
-    height: 12vh; }
-  .returned-item:not(.returned-item--done):not(.returned-item--emphasized) > .returned-item__info {
-    display: none; }
   .returned-item__info {
     position: absolute;
-    bottom: 0;
+    bottom: -12vh;
     left: 0;
     right: 0;
-    height: 6vh;
-    background-color: rgba(0, 0, 0, 0.4); }
-    .returned-item__info > .returned-item-heading {
-      line-height: 6vh; }
-    .returned-item__info .returned-item__status::empty {
-      display: none; }
-    .returned-item__info .returned-item__location {
-      display: none; }
-      .returned-item__info .returned-item__location::empty {
-        display: none; }
+    line-height: 12vh; }

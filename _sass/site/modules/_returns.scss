@@ -1,37 +1,66 @@
 $return-item-title-height: 12vh;
 
-.backdrop {
+.returns-banner {
+  transition: all 0.6s;
   position: absolute;
-  left:   0;
-  right:  0;
-  top:    0;
+  z-index: 0;
+  left: 0;
+  right: 100vw;
   bottom: 0;
-  background-color: #FFFFFF;
+  height: $return-item-title-height * 1.5;
 
-  &--overlay {
-    position: absolute;
-    height: $return-item-title-height * 1.5;
-    left:   0;
-    right:  0;
-    top:    -100vh;
-    bottom: 0;
-
-    &.active {
-      top: (100vh - ($return-item-title-height * 1.5));
-    }
+  &.current {
+    right: 0;
   }
 
-  &--rtv { background-color: $base-rtv; }
-  &--clr { background-color: $base-clr; }
-  &--dmg { background-color: $base-dmg; }
-  &--lg  { background-color: $base-lg; }
-  &--md  { background-color: $base-md; }
-  &--sm  { background-color: $base-sm; }
-  &--xs  { background-color: $base-xs; }
-  &--acc { background-color: $base-acc; }
+  &::after {
+    content: "";
+    @extend %pos-all, %pos-abs !optional;
+    transition: all 0.6s;
+  }
+
+  &--rtv::after { background-color: $base-rtv; }
+  &--clr::after { background-color: $base-clr; }
+  &--dmg::after { background-color: $base-dmg; }
+  &--lg::after  { background-color: $base-lg; }
+  &--md::after  { background-color: $base-md; }
+  &--sm::after  { background-color: $base-sm; }
+  &--xs::after  { background-color: $base-xs; }
+  &--acc::after { background-color: $base-acc; }
 }
 
-.returned-fix-list {
+// .backdrop {
+//   position: absolute;
+//   left:   0;
+//   right:  0;
+//   top:    0;
+//   bottom: 0;
+//   background-color: #FFFFFF;
+//
+//   &--overlay {
+//     position: absolute;
+//     height: $return-item-title-height * 1.5;
+//     left:   0;
+//     right:  0;
+//     top:    -100vh;
+//     bottom: 0;
+//
+//     &.active {
+//       top: (100vh - ($return-item-title-height * 1.5));
+//     }
+//   }
+//
+//   &--rtv { background-color: $base-rtv; }
+//   &--clr { background-color: $base-clr; }
+//   &--dmg { background-color: $base-dmg; }
+//   &--lg  { background-color: $base-lg; }
+//   &--md  { background-color: $base-md; }
+//   &--sm  { background-color: $base-sm; }
+//   &--xs  { background-color: $base-xs; }
+//   &--acc { background-color: $base-acc; }
+// }
+
+.returned-items-list {
   @extend %list-flex, %pos-rel, %z1 !optional;
   height: 100vh;
 }
@@ -85,74 +114,23 @@ $return-item-title-height: 12vh;
     &.returned-item--sm  { border: 3px solid $base-sm; }
     &.returned-item--xs  { border: 3px solid $base-xs; }
     &.returned-item--acc { border: 3px solid $base-acc; }
-
-    > .returned-item__info {
-      bottom: -($return-item-title-height - 1);
-      left: 0;
-      right: 0;
-      height: $return-item-title-height - 1;
-      background: none;
-
-      > .returned-item-heading {
-        @extend %m0, %h2 !optional;
-        line-height: ($return-item-title-height - 1);
-      }
-
-      .returned-item__location {
-        display: inline;
-      }
-    }
-  }
-
-  &.returned-item--done {
-    .returned-item__info {
-      color: #FFFFFF;
-    }
-  }
-
-  &.returned-item--emphasized {
-    .returned-item__info {
-      height: $return-item-title-height;
-    }
-  }
-
-  &:not(.returned-item--done):not(.returned-item--emphasized) {
-
-    > .returned-item__info {
-      display: none;
-    }
-
   }
 
   &__info {
-    @extend %text-c, %z1 !optional;
+    @extend %text-c, %z1, %m0 !optional;
     position: absolute;
-    bottom: 0;
+    bottom: -$return-item-title-height;
     left: 0;
     right: 0;
-    height: $return-item-title-height / 2;
-    background-color: rgba(0,0,0,0.4);
-
-    > .returned-item-heading {
-      @extend %m0, %h6 !optional;
-      line-height: $return-item-title-height / 2;
-    }
-
-    .returned-item__status {
-      @extend %thick !optional;
-
-      &::empty {
-        display: none;
-      }
-    }
-
-    .returned-item__location {
-      @extend %thin, %ml1 !optional;
-      display: none;
-
-      &::empty {
-        display: none;
-      }
-    }
+    line-height: $return-item-title-height;
   }
+
+  &__location {
+    @extend %thick !optional;
+  }
+
+  &__type {
+    @extend %thin, %ml1 !optional;
+  }
+
 }

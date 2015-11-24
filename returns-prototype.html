@@ -12,54 +12,30 @@ permalink: /returns-prototype/
   .returned-item--5::after { background-image: url({{'/assets/images/item_5.png' | prepend: site.baseurl }}); }
 </style>
 
-<div class="backdrop backdrop--main"></div>
-<div class="backdrop backdrop--overlay backdrop--rtv active"></div>
-<div class="backdrop backdrop--overlay backdrop--dmg"></div>
-<div class="backdrop backdrop--overlay backdrop--lg"></div>
-<div class="backdrop backdrop--overlay backdrop--md"></div>
-<div class="backdrop backdrop--overlay backdrop--sm"></div>
-<div class="backdrop backdrop--overlay backdrop--xs"></div>
-<div class="backdrop backdrop--overlay backdrop--acc"></div>
 
-<ul class="returned-fix-list">
-  <li class="returned-item returned-item--1">
-    <header class="returned-item__info">
-      <h2 class="returned-item-heading">
-        <strong class="returned-item__status"></strong>
-        <span class="returned-item__location"></span>
-      </h2>
-    </header>
+<ul class="returned-items-list">
+  <li class="returned-item returned-item--1" data-item-status="out">
+
   </li>
-  <li class="returned-item returned-item--2">
+  <li class="returned-item returned-item--2" data-item-status="out">
     <header class="returned-item__info">
-      <h2 class="returned-item-heading">
-        <strong class="returned-item__status"></strong>
-        <span class="returned-item__location"></span>
-      </h2>
-    </header>
+
   </li>
-  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv">
-    <header class="returned-item__info">
-      <h2 class="returned-item-heading">
-        <strong class="returned-item__status">R T V</strong>
-        <span class="thin ml1 returned-item__location">ALL</span>
-      </h2>
-    </header>
+  <li class="returned-item returned-item--3 returned-item--emphasized returned-item--rtv" data-item-status="rtv">
+    <h2 class="returned-item__info">
+      <span class="returned-item__location">R T V</span>
+      <span class="returned-item__type">ALL</span>
+    </h2>
   </li>
-  <li class="returned-item returned-item--4 returned-item--done returned-item--sold">
-    <header class="returned-item__info">
-      <h2 class="returned-item-heading">
-        <strong class="returned-item__status">SOLD</strong>
-        <span class="thin ml1 returned-item__location">ALL</span>
-      </h2>
-    </header>
+  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" data-item-status="sold">
+
   </li>
-  <li class="returned-item returned-item--5 returned-item--done returned-item--sold">
-    <header class="returned-item__info">
-      <h2 class="returned-item-heading">
-        <strong class="returned-item__status">SOLD</strong>
-        <span class="returned-item__location">ALL</span>
-      </h2>
-    </header>
+  <li class="returned-item returned-item--5 returned-item--done returned-item--sold" data-item-status="sold">
+
   </li>
 </ul>
+<footer class="returns-banner">
+</footer>
+
+<script type="text/javascript">
+</script>
