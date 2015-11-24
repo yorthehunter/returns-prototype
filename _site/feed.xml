@@ -4,10 +4,10 @@
     <title>Prototype</title>
     <description>Prototype
 </description>
-    <link>http://yourdomain.com/returns-prototype/</link>
-    <atom:link href="http://yourdomain.com/returns-prototype/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Nov 2015 16:00:49 -0500</pubDate>
-    <lastBuildDate>Tue, 24 Nov 2015 16:00:49 -0500</lastBuildDate>
+    <link>http://yorthehunter.github.io/returns-prototype/</link>
+    <atom:link href="http://yorthehunter.github.io/returns-prototype/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 24 Nov 2015 16:08:08 -0500</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2015 16:08:08 -0500</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Mon, 23 Nov 2015 12:08:10 -0500</pubDate>
-        <link>http://yourdomain.com/returns-prototype/jekyll/update/2015/11/23/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/returns-prototype/jekyll/update/2015/11/23/welcome-to-jekyll.html</guid>
+        <link>http://yorthehunter.github.io/returns-prototype/jekyll/update/2015/11/23/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yorthehunter.github.io/returns-prototype/jekyll/update/2015/11/23/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
