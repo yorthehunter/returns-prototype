@@ -576,6 +576,7 @@ small,
   font-size: 0.8em;
   line-height: 1em; }
 
+.returned-item__status,
 .uppercase {
   text-transform: uppercase; }
 
@@ -590,7 +591,7 @@ small,
 .text-l {
   text-align: left   !important; }
 
-.returned-item__info,
+.returned-item__status, .returned-item__info,
 .text-c {
   text-align: center !important; }
 
@@ -623,6 +624,7 @@ small,
 .line2 {
   line-height: 2rem !important; }
 
+.returned-item__status,
 .line3 {
   line-height: 3rem !important; }
 
@@ -2267,7 +2269,7 @@ development environment.
   </div>
   ```
   */
-.returns-banner::after,
+.returns-banner::after, .returned-item__status,
 .pos-abs {
   position: absolute; }
 
@@ -2281,16 +2283,18 @@ development environment.
 .pos-t {
   top: 0; }
 
+.returned-item__status,
 .pos-b {
   bottom: 0; }
 
+.returned-item__status,
 .pos-l {
   left: 0; }
 
+.returned-item__status,
 .pos-r {
   right: 0; }
 
-.returns-banner::after,
 .pos-all {
   top: 0;
   left: 0;
@@ -2302,7 +2306,7 @@ development environment.
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.returned-items-list, .returned-item__info,
+.returned-items-list, .returned-item__status, .returned-item__info,
 .z1 {
   z-index: 1; }
 
@@ -3875,6 +3879,122 @@ category: theme - decorations
 <p class="shadowed-link-light-border"> light link border using shadow </p>
 ```
 */
+.returned-item--current,
+.bordered {
+  border: 1px solid; }
+
+.shadowed {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); }
+
+.shadowed-light {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+
+.shadowed-white {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.4); }
+
+.shadowed-white-light {
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.4); }
+
+.shadowed-link-border {
+  box-shadow: 0 0 0 2px #ff5c61; }
+
+.shadowed-link-light-border {
+  box-shadow: 0 0 0 2px #a9caea; }
+
+.border-xs {
+  border-width: 1px; }
+
+.round-xs {
+  border-radius: 1px; }
+
+.border-sm {
+  border-width: 2px; }
+
+.round-sm {
+  border-radius: 2px; }
+
+.returned-item--current,
+.border-md {
+  border-width: 4px; }
+
+.round-md {
+  border-radius: 4px; }
+
+.border-lg {
+  border-width: 8px; }
+
+.round-lg {
+  border-radius: 8px; }
+
+.border-xl {
+  border-width: 16px; }
+
+.round-xl {
+  border-radius: 16px; }
+
+.border-t {
+  border-top-style: solid;
+  border-top-width: 1px; }
+
+.round-t {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
+
+.border-b {
+  border-bottom-style: solid;
+  border-bottom-width: 1px; }
+
+.round-b {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important; }
+
+.border-l {
+  border-left-style: solid;
+  border-left-width: 1px; }
+
+.round-l {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important; }
+
+.border-r {
+  border-right-style: solid;
+  border-right-width: 1px; }
+
+.round-r {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
+
+.border-none {
+  border-width: 0 !important; }
+
+.round-none {
+  border-radius: 0 !important; }
+
+.border-gray-lightest {
+  border-color: #eeeff4; }
+
+.returned-item--current,
+.border-gray-light {
+  border-color: #ccd2de; }
+
+.border-gray {
+  border-color: #7d869b; }
+
+.border-gray-dark {
+  border-color: #505a69; }
+
+.border-gray-darkest {
+  border-color: #2a313d; }
+
+.border-link {
+  border-color: #ff5c61; }
+
+.border-ghost-black-base {
+  border-color: rgba(0, 0, 0, 0.25); }
+
+.border-ghost-white-base {
+  border-color: rgba(255, 255, 255, 0.4); }
+
 /*doc
 ---
 title: "Background colors"
@@ -4118,6 +4238,7 @@ category: theme - decorations
 .color-gray-lightest {
   color: #eeeff4 !important; }
 
+.returns-banner,
 .bg-gray-light {
   background-color: #ccd2de !important; }
 
@@ -4166,6 +4287,7 @@ category: theme - decorations
 .color-ghost-black-light {
   color: rgba(0, 0, 0, 0.1) !important; }
 
+.returned-item__status,
 .bg-ghost-black-base {
   background-color: rgba(0, 0, 0, 0.25) !important; }
 
@@ -4524,14 +4646,23 @@ stylesheets
   position: absolute;
   z-index: 0;
   left: 0;
-  right: 100vw;
+  right: 0;
   bottom: 0;
-  height: 18vh; }
-  .returns-banner.current {
+  height: 100vh;
+  overflow: hidden; }
+  .returns-banner.current::after {
     right: 0; }
   .returns-banner::after {
     content: "";
-    transition: all 0.6s; }
+    transition: all 0.4s;
+    transform: skewX(-45deg);
+    margin-left: -50%;
+    margin-right: -50%;
+    z-index: 0;
+    left: 0;
+    right: 100vw;
+    bottom: 0;
+    top: 0; }
   .returns-banner--rtv::after {
     background-color: #FFDB00; }
   .returns-banner--clr::after {
@@ -4557,7 +4688,23 @@ stylesheets
   position: relative;
   min-height: 70vh;
   max-height: 82vh;
-  transition: all 0.5s; }
+  transition: all 0.4s; }
+  .returned-item--rtv {
+    color: #444444 !important; }
+  .returned-item--clr {
+    color: #444444 !important; }
+  .returned-item--dmg {
+    color: #FFFFFF !important; }
+  .returned-item--lg {
+    color: #FFFFFF !important; }
+  .returned-item--md {
+    color: #FFFFFF !important; }
+  .returned-item--sm {
+    color: #FFFFFF !important; }
+  .returned-item--xs {
+    color: #444444 !important; }
+  .returned-item--acc {
+    color: #FFFFFF !important; }
   .returned-item::after {
     transition: all 0.4s;
     content: "";
@@ -4584,22 +4731,8 @@ stylesheets
     overflow: visible; }
     .returned-item--current::after {
       opacity: 1; }
-    .returned-item--current.returned-item--rtv {
-      border: 3px solid #FFDB00; }
-    .returned-item--current.returned-item--clr {
-      border: 3px solid #37E3E4; }
-    .returned-item--current.returned-item--dmg {
-      border: 3px solid #555555; }
-    .returned-item--current.returned-item--lg {
-      border: 3px solid #D50000; }
-    .returned-item--current.returned-item--md {
-      border: 3px solid #0000FF; }
-    .returned-item--current.returned-item--sm {
-      border: 3px solid #FF00FF; }
-    .returned-item--current.returned-item--xs {
-      border: 3px solid #00FF00; }
-    .returned-item--current.returned-item--acc {
-      border: 3px solid #FF8000; }
+  .returned-item__status {
+    color: #FFFFFF; }
   .returned-item__info {
     position: absolute;
     bottom: -11vh;

@@ -5,18 +5,29 @@ $return-item-title-height: 12vh;
   position: absolute;
   z-index: 0;
   left: 0;
-  right: 100vw;
+  right: 0;
   bottom: 0;
-  height: $return-item-title-height * 1.5;
+  @extend %bg-gray-light;
+  height: 100vh;
+  overflow: hidden;
 
-  &.current {
+  &.current::after {
     right: 0;
   }
 
   &::after {
     content: "";
-    @extend %pos-all, %pos-abs !optional;
-    transition: all 0.6s;
+    @extend %pos-abs !optional;
+    transition: all 0.4s;
+    // width: 200%;
+    transform: skewX(-45deg);
+    margin-left: -50%;
+    margin-right: -50%;
+    z-index: 0;
+    left: 0;
+    right: 100vw;
+    bottom: 0;
+    top: 0;
   }
 
   &--rtv::after { background-color: $base-rtv; }
@@ -29,37 +40,6 @@ $return-item-title-height: 12vh;
   &--acc::after { background-color: $base-acc; }
 }
 
-// .backdrop {
-//   position: absolute;
-//   left:   0;
-//   right:  0;
-//   top:    0;
-//   bottom: 0;
-//   background-color: #FFFFFF;
-//
-//   &--overlay {
-//     position: absolute;
-//     height: $return-item-title-height * 1.5;
-//     left:   0;
-//     right:  0;
-//     top:    -100vh;
-//     bottom: 0;
-//
-//     &.active {
-//       top: (100vh - ($return-item-title-height * 1.5));
-//     }
-//   }
-//
-//   &--rtv { background-color: $base-rtv; }
-//   &--clr { background-color: $base-clr; }
-//   &--dmg { background-color: $base-dmg; }
-//   &--lg  { background-color: $base-lg; }
-//   &--md  { background-color: $base-md; }
-//   &--sm  { background-color: $base-sm; }
-//   &--xs  { background-color: $base-xs; }
-//   &--acc { background-color: $base-acc; }
-// }
-
 .returned-items-list {
   @extend %list-flex, %pos-rel, %z1 !optional;
   height: 100vh;
@@ -70,7 +50,16 @@ $return-item-title-height: 12vh;
   position: relative;
   min-height: 70vh;
   max-height: (100vh - ($return-item-title-height * 1.5));
-  transition: all 0.5s;
+  transition: all 0.4s;
+
+  &--rtv { color: #444444 !important; }
+  &--clr { color: #444444 !important; }
+  &--dmg { color: #FFFFFF !important; }
+  &--lg  { color: #FFFFFF !important; }
+  &--md  { color: #FFFFFF !important; }
+  &--sm  { color: #FFFFFF !important; }
+  &--xs  { color: #444444 !important; }
+  &--acc { color: #FFFFFF !important; }
 
   &::after {
     transition: all 0.4s;
@@ -110,19 +99,25 @@ $return-item-title-height: 12vh;
     min-height: (100vh - $return-item-title-height);
     min-width: 480px;
     overflow: visible;
+    @extend %bordered, %border-gray-light, %border-md;
 
     &::after {;
       opacity: 1;
     }
+    //
+    // &.returned-item--rtv { border: 3px solid $base-rtv; }
+    // &.returned-item--clr { border: 3px solid $base-clr; }
+    // &.returned-item--dmg { border: 3px solid $base-dmg; }
+    // &.returned-item--lg  { border: 3px solid $base-lg; }
+    // &.returned-item--md  { border: 3px solid $base-md; }
+    // &.returned-item--sm  { border: 3px solid $base-sm; }
+    // &.returned-item--xs  { border: 3px solid $base-xs; }
+    // &.returned-item--acc { border: 3px solid $base-acc; }
+  }
 
-    &.returned-item--rtv { border: 3px solid $base-rtv; }
-    &.returned-item--clr { border: 3px solid $base-clr; }
-    &.returned-item--dmg { border: 3px solid $base-dmg; }
-    &.returned-item--lg  { border: 3px solid $base-lg; }
-    &.returned-item--md  { border: 3px solid $base-md; }
-    &.returned-item--sm  { border: 3px solid $base-sm; }
-    &.returned-item--xs  { border: 3px solid $base-xs; }
-    &.returned-item--acc { border: 3px solid $base-acc; }
+  &__status {
+    @extend %pos-abs, %pos-b, %pos-r, %pos-l, %text-c, %line3, %bg-ghost-black-base, %z1, %uppercase !optional;
+    color: #FFFFFF;
   }
 
   &__info {

@@ -10,44 +10,60 @@
   <meta name="description" content="Prototype
 ">
 
-  <link rel="stylesheet" href="/returns-prototype/css/main.css">
-  <link rel="canonical" href="http://yorthehunter.github.io/returns-prototype/returns-prototype/">
-  <link rel="alternate" type="application/rss+xml" title="Prototype" href="http://yorthehunter.github.io/returns-prototype/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yorthehunter.github.io/returns-prototype/">
+  <link rel="alternate" type="application/rss+xml" title="Prototype" href="http://yorthehunter.github.io/feed.xml">
 
-  <script src="/returns-prototype/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 
 
   <body>
     <article>
   <style>
-  .returned-item--1::after { background-image: url(/returns-prototype/assets/images/item_1.png); }
-  .returned-item--2::after { background-image: url(/returns-prototype/assets/images/item_2.png); }
-  .returned-item--3::after { background-image: url(/returns-prototype/assets/images/item_3.png); }
-  .returned-item--4::after { background-image: url(/returns-prototype/assets/images/item_4.png); }
-  .returned-item--5::after { background-image: url(/returns-prototype/assets/images/item_5.png); }
+  .returned-item--1::after { background-image: url(/assets/images/item_1.png); }
+  .returned-item--2::after { background-image: url(/assets/images/item_2.png); }
+  .returned-item--3::after { background-image: url(/assets/images/item_3.png); }
+  .returned-item--4::after { background-image: url(/assets/images/item_4.png); }
+  .returned-item--5::after { background-image: url(/assets/images/item_5.png); }
 </style>
 
 
 <ul class="returned-items-list">
-  <li class="returned-item returned-item--1" data-item-status="lg">
-
+  <li class="returned-item returned-item--1" data-item-status="out" data-item-size="lg">
+    <h2 class="returned-item__info">
+      <span class="returned-item__location">LARGE</span>
+      <span class="returned-item__type">Apparel</span>
+    </h2>
+    <aside class="returned-item__status"></aside>
   </li>
-  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" data-item-status="sold">
-
+  <li class="returned-item returned-item--4 returned-item--done returned-item--sold" data-item-status="sold" data-item-size="acc">
+    <h2 class="returned-item__info">
+      <span class="returned-item__location">Accessory</span>
+      <span class="returned-item__type">Jewelry</span>
+    </h2>
+    <aside class="returned-item__status">SOLD</aside>
   </li>
-  <li class="returned-item returned-item--2" data-item-status="md">
-    <header class="returned-item__info">
-
+  <li class="returned-item returned-item--2" data-item-status="out" data-item-size="md">
+    <h2 class="returned-item__info">
+      <span class="returned-item__location">MEDIUM</span>
+      <span class="returned-item__type">Apparel</span>
+    </h2>
+    <aside class="returned-item__status"></aside>
   </li>
-  <li class="returned-item returned-item--3" data-item-status="rtv">
+  <li class="returned-item returned-item--3" data-item-status="rtv" data-item-size="md">
     <h2 class="returned-item__info">
       <span class="returned-item__location">R T V</span>
-      <span class="returned-item__type">ALL</span>
+      <span class="returned-item__type">All</span>
     </h2>
+    <aside class="returned-item__status"></aside>
   </li>
-  <li class="returned-item returned-item--5 returned-item--done returned-item--sold" data-item-status="sold">
-
+  <li class="returned-item returned-item--5 returned-item--done returned-item--sold" data-item-status="sold" data-item-size="xs">
+    <h2 class="returned-item__info">
+      <span class="returned-item__location">EXTRA SMALL</span>
+      <span class="returned-item__type">Apparel</span>
+    </h2>
+    <aside class="returned-item__status">SOLD</aside>
   </li>
 </ul>
 <footer class="returns-banner">
@@ -60,31 +76,39 @@
       $(this).addClass("returned-item--"+status);
     })
 
-    $(".returned-item--done").appendTo(".returned-items-list");
-
     if ($(".returned-item--current").length == 0) {
       $(".returned-item").addClass("returned-item--origin");
     }
 
+    rearrange();
+
     $(".returned-item").click(function(){
       this_status = $(this).data("item-status");
       if (this_status == ("out" || "sold")){
-        $(this).data("item-status", "in").removeClass("returned-item--sold returned-item--out").addClass("returned-item--in");
+        $(this).data("item-status", "in").removeClass("returned-item--sold returned-item--out").addClass("returned-item--in").find(".returned-item__status").text("IN");
       }
       else {
-        $(this).addClass("returned-item--"+this_status);
+        $(this).addClass("returned-item--"+this_status).find(".returned-item__status").text(this_status);
       }
 
       $(".returned-item").removeClass("returned-item--origin").removeClass("returned-item--current");
-      $(this).addClass("returned-item--current");
+      $(this).addClass("returned-item--current returned-item--done");
+
+      rearrange($(this));
       color_banner();
     });
 
   });
 
+  function rearrange(e) {
+    done_items = $(".returned-item--done");
+
+    $(".returned-items-list").append($(".returned-item:not('.returned-item--done')"), e, done_items);
+  }
+
   function color_banner() {
-    current_status = $(".returned-item--current").data("item-status");
-    $(".returns-banner").removeClass("current returns-banner--in returns-banner--out returns-banner--sold returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--clr returns-banner--dmg");
+    current_status = $(".returned-item--current").data("item-size");
+    $(".returns-banner").removeClass("current returns-banner--in returns-banner--acc returns-banner--out returns-banner--sold returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--clr returns-banner--dmg");
 
     setTimeout(function(){
       $(".returned-item--current").addClass("returned-item--" + current_status);
