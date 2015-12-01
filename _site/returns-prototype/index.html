@@ -84,7 +84,7 @@
 
     $(".returned-item").click(function(){
       this_status = $(this).data("item-status");
-      if (this_status == ("out" || "sold")){
+      if(this_status == "out" || this_status == "sold"){
         $(this).data("item-status", "in").removeClass("returned-item--sold returned-item--out").addClass("returned-item--in").find(".returned-item__status").text("IN");
       }
       else {
@@ -98,17 +98,43 @@
       color_banner();
     });
 
+    $('body').bind('keypress', function(e) {
+    	if(e.keyCode==49){
+    		$(".returned-item--1").click();
+    	}
+    	if(e.keyCode==50){
+    		$(".returned-item--2").click();
+    	}
+    	if(e.keyCode==51){
+    		$(".returned-item--3").click();
+    	}
+    	if(e.keyCode==52){
+    		$(".returned-item--4").click();
+    	}
+    	if(e.keyCode==53){
+    		$(".returned-item--5").click();
+    	}
+    	if(e.keyCode==55){
+        damage_out($(".returned-item--current"));
+    	}
+    });
+
   });
+
+  function damage_out(e) {
+    e.data("item-status", "dmg").removeClass("returned-item--sold returned-item--in returned-item--out returned-item--xs returned-item--sm returned-item--md returned-item--lg").addClass("returned-item--dmg").find(".returned-item__status").text("DAMAGED");
+    color_banner();
+  }
 
   function rearrange(e) {
     done_items = $(".returned-item--done");
 
-    $(".returned-items-list").append($(".returned-item:not('.returned-item--done')"), e, done_items);
+    $(".returned-items-list").append(done_items, e, $(".returned-item:not('.returned-item--done')"));
   }
 
   function color_banner() {
     current_status = $(".returned-item--current").data("item-size");
-    $(".returns-banner").removeClass("current returns-banner--in returns-banner--acc returns-banner--out returns-banner--sold returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--clr returns-banner--dmg");
+    $(".returns-banner").removeClass("current returns-banner--in returns-banner--acc returns-banner--out returns-banner--sold returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--dmg returns-banner--clr returns-banner--dmg");
 
     setTimeout(function(){
       $(".returned-item--current").addClass("returned-item--" + current_status);
