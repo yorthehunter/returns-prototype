@@ -1,4 +1,4 @@
-$return-item-title-height: 12vh;
+$return-item-title-height: 15vh;
 
 .returns-banner {
   transition: all 0.6s;
@@ -131,7 +131,13 @@ $return-item-title-height: 12vh;
   }
 
   &__location {
-    @extend %thick !optional;
+    @extend %pos-abs, %pos-l, %pos-r, %mb0, %text-c !optional;
+    bottom: -($return-item-title-height - 1);
+
+    &--primary {}
+    &--secondary {
+      @extend %thin, %h4, %uppercase, %ghost-dark !optional;
+    }
   }
 
   &__type {

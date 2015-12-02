@@ -367,7 +367,7 @@ h3, .h3 {
   line-height: 2rem;
   /* 2 */ }
 
-h4, .h4 {
+.returned-item__location--secondary, h4, .h4 {
   font-size: 1.5376rem;
   /* 1 */
   margin-bottom: 1rem;
@@ -576,7 +576,7 @@ small,
   font-size: 0.8em;
   line-height: 1em; }
 
-.returned-item__status,
+.returned-item__status, .returned-item__location--secondary,
 .uppercase {
   text-transform: uppercase; }
 
@@ -591,7 +591,7 @@ small,
 .text-l {
   text-align: left   !important; }
 
-.returned-item__status, .returned-item__info,
+.returned-item__status, .returned-item__info, .returned-item__location,
 .text-c {
   text-align: center !important; }
 
@@ -606,11 +606,10 @@ small,
 .dark {
   color: black; }
 
-.returned-item__type,
+.returned-item__location--secondary, .returned-item__type,
 .thin {
   font-weight: 200; }
 
-.returned-item__location,
 .thick {
   font-weight: 800; }
 
@@ -712,7 +711,7 @@ small,
     line-height: 2rem;
     /* 2 */ }
 
-  .h3, .h4 {
+  .returned-item__location--secondary, .h3, .h4 {
     font-size: 1.24rem;
     /* 1 */
     margin-bottom: 1rem;
@@ -1939,6 +1938,7 @@ development environment.
 .mt8 {
   margin-top: 8rem; }
 
+.returned-item__location,
 .mb0 {
   margin-bottom: 0rem !important; }
 
@@ -2269,7 +2269,7 @@ development environment.
   </div>
   ```
   */
-.returns-banner::after, .returned-item__status,
+.returns-banner::after, .returned-item__status, .returned-item__location,
 .pos-abs {
   position: absolute; }
 
@@ -2287,11 +2287,11 @@ development environment.
 .pos-b {
   bottom: 0; }
 
-.returned-item__status,
+.returned-item__status, .returned-item__location,
 .pos-l {
   left: 0; }
 
-.returned-item__status,
+.returned-item__status, .returned-item__location,
 .pos-r {
   right: 0; }
 
@@ -4336,6 +4336,7 @@ category: theme - decorations
 .ghost-base {
   opacity: 0.5; }
 
+.returned-item__location--secondary,
 .ghost-dark {
   opacity: 0.66; }
 
@@ -4687,7 +4688,7 @@ stylesheets
   overflow: hidden;
   position: relative;
   min-height: 70vh;
-  max-height: 82vh;
+  max-height: 77.5vh;
   transition: all 0.4s; }
   .returned-item--rtv {
     color: #444444 !important; }
@@ -4726,7 +4727,7 @@ stylesheets
     max-width: 480px;
     transform: translateX(-25%); }
   .returned-item--current {
-    min-height: 88vh;
+    min-height: 85vh;
     min-width: 480px;
     overflow: visible; }
     .returned-item--current::after {
@@ -4735,8 +4736,10 @@ stylesheets
     color: #FFFFFF; }
   .returned-item__info {
     position: absolute;
-    bottom: -11vh;
+    bottom: -14vh;
     left: 0;
     right: 0;
-    height: 11vh;
-    line-height: 11vh; }
+    height: 14vh;
+    line-height: 14vh; }
+  .returned-item__location {
+    bottom: -14vh; }
