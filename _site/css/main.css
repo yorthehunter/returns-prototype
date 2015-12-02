@@ -337,7 +337,7 @@ html, body {
 /* 1 */
 body {
   line-height: 1rem;
-  font-family: brandontext, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   color: #444; }
 
@@ -539,7 +539,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 strong,
 b,
 .b {
-  font-weight: 800; }
+  font-weight: 700; }
 
 em,
 i,
@@ -608,10 +608,11 @@ small,
 
 .returned-item__location--secondary, .returned-item__type,
 .thin {
-  font-weight: 200; }
+  font-weight: 300; }
 
+.returned-item__location--primary,
 .thick {
-  font-weight: 800; }
+  font-weight: 700; }
 
 .normal {
   font-weight: 400 !important; }

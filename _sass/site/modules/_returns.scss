@@ -134,7 +134,9 @@ $return-item-title-height: 15vh;
     @extend %pos-abs, %pos-l, %pos-r, %mb0, %text-c !optional;
     bottom: -($return-item-title-height - 1);
 
-    &--primary {}
+    &--primary {
+      @extend %thick !optional;
+    }
     &--secondary {
       @extend %thin, %h4, %uppercase, %ghost-dark !optional;
     }
