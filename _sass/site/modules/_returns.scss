@@ -1,7 +1,6 @@
 $return-item-title-height: 15vh;
 
 .returns-banner {
-  transition: all 0.6s;
   position: absolute;
   z-index: 0;
   left: 0;
@@ -18,14 +17,14 @@ $return-item-title-height: 15vh;
   &::after {
     content: "";
     @extend %pos-abs !optional;
-    transition: all 0.4s;
+    transition: right 0.2s linear;
     // width: 200%;
     transform: skewX(-45deg);
     margin-left: -50%;
     margin-right: -50%;
     z-index: 0;
     left: 0;
-    right: 100vw;
+    right: 150vw;
     bottom: 0;
     top: 0;
   }
