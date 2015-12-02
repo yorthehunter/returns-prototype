@@ -4680,6 +4680,8 @@ stylesheets
     background-color: #00FF00; }
   .returns-banner--acc::after {
     background-color: #FF8000; }
+  .returns-banner--jewelry::after {
+    background-color: #FF8000; }
 
 .returned-items-list {
   height: 100vh; }
@@ -4694,8 +4696,6 @@ stylesheets
     color: #444444 !important; }
   .returned-item--clr {
     color: #444444 !important; }
-  .returned-item--dmg {
-    color: #FFFFFF !important; }
   .returned-item--lg {
     color: #FFFFFF !important; }
   .returned-item--md {
@@ -4705,6 +4705,10 @@ stylesheets
   .returned-item--xs {
     color: #444444 !important; }
   .returned-item--acc {
+    color: #FFFFFF !important; }
+  .returned-item--jewelry {
+    color: #FFFFFF !important; }
+  .returned-item--dmg {
     color: #FFFFFF !important; }
   .returned-item::after {
     transition: all 0.4s;
@@ -4742,4 +4746,5 @@ stylesheets
     height: 14vh;
     line-height: 14vh; }
   .returned-item__location {
-    bottom: -14vh; }
+    bottom: -14vh;
+    max-height: 14vh; }

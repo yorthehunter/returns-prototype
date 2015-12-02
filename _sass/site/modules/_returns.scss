@@ -37,6 +37,7 @@ $return-item-title-height: 15vh;
   &--sm::after  { background-color: $base-sm; }
   &--xs::after  { background-color: $base-xs; }
   &--acc::after { background-color: $base-acc; }
+  &--jewelry::after { background-color: $base-acc; }
 }
 
 .returned-items-list {
@@ -53,13 +54,14 @@ $return-item-title-height: 15vh;
 
   &--rtv { color: #444444 !important; }
   &--clr { color: #444444 !important; }
-  &--dmg { color: #FFFFFF !important; }
   &--lg  { color: #FFFFFF !important; }
   &--md  { color: #FFFFFF !important; }
   &--sm  { color: #FFFFFF !important; }
   &--xs  { color: #444444 !important; }
   &--acc { color: #FFFFFF !important; }
-
+  &--jewelry { color: #FFFFFF !important; }
+  &--dmg { color: #FFFFFF !important; }
+  
   &::after {
     transition: all 0.4s;
     content: "";
@@ -132,6 +134,7 @@ $return-item-title-height: 15vh;
   &__location {
     @extend %pos-abs, %pos-l, %pos-r, %mb0, %text-c !optional;
     bottom: -($return-item-title-height - 1);
+    max-height: 14vh;
 
     &--primary {
       @extend %thick !optional;
