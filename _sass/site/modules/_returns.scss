@@ -88,6 +88,10 @@ $return-item-title-height: 15vh;
       cursor: pointer;
     }
 
+    &.returned-item--done {
+      opacity: 0.4;
+    }
+
     &::after {
       opacity: 1;
     }
@@ -119,8 +123,31 @@ $return-item-title-height: 15vh;
   }
 
   &__status {
-    @extend %pos-abs, %pos-b, %pos-r, %pos-l, %text-c, %line3, %bg-ghost-black-base, %z1, %uppercase !optional;
-    color: #FFFFFF;
+
+    &::after {
+      @extend %pos-abs, %pos-b, %pos-r, %pos-l, %text-c, %bg-ghost-black-dark, %thin, %z1, %uppercase, %f-lg, %m0 !optional;
+      color: #FFFFFF;
+      position: absolute;
+      transform: rotate(-10deg);
+      bottom: -6rem;
+      left: 0;
+      right: 0;
+      height: 10rem;
+      width: 130%;
+      margin-left: -15%;
+    }
+
+
+    > span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: right;
+      padding-right: 15%;
+      transform: rotate(8deg);
+    }
   }
 
   &__info {

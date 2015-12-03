@@ -37,35 +37,35 @@
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"></aside>
+    <aside class="returned-item__status"><span></span></aside>
   </li>
   <li class="returned-item returned-item--4 returned-item--done" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"></aside>
+    <aside class="returned-item__status"><span></span></aside>
   </li>
   <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"></aside>
+    <aside class="returned-item__status"><span></span></aside>
   </li>
   <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"></aside>
+    <aside class="returned-item__status"><span></span></aside>
   </li>
   <li class="returned-item returned-item--5 returned-item--done" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"></aside>
+    <aside class="returned-item__status"><span></span></aside>
   </li>
 </ul>
 <footer class="returns-banner">
@@ -157,6 +157,7 @@
 
   function set_in(e) {
     e.data("item-status", "in");
+    e.data("item-override", "");
     set_location();
     write_location(e, e.data("item-type"));
     item_status();
@@ -171,7 +172,7 @@
   function item_status() {
     $(".returned-item").each( function () {
       status = $(this).data("item-status");
-      indicator = $(this).find(".returned-item__status");
+      indicator = $(this).find(".returned-item__status > span");
       if (status == "sold") {
         indicator.text("$");
       }
