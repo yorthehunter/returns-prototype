@@ -34,36 +34,36 @@
 <ul class="returned-items-list">
   <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
-      <div class="returned-item__location--primary">LG / XL</div>
-      <div class="returned-item__location--secondary">Apparel</div>
+      <div class="returned-item__location--primary"></div>
+      <div class="returned-item__location--secondary"></div>
     </h2>
     <aside class="returned-item__status"></aside>
   </li>
   <li class="returned-item returned-item--4 returned-item--done" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
     <h2 class="returned-item__location">
-      <div class="returned-item__location--primary">LG / XL</div>
-      <div class="returned-item__location--secondary">Apparel</div>
+      <div class="returned-item__location--primary"></div>
+      <div class="returned-item__location--secondary"></div>
     </h2>
     <aside class="returned-item__status"></aside>
   </li>
   <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
-      <div class="returned-item__location--primary">LG / XL</div>
-      <div class="returned-item__location--secondary">Apparel</div>
+      <div class="returned-item__location--primary"></div>
+      <div class="returned-item__location--secondary"></div>
     </h2>
     <aside class="returned-item__status"></aside>
   </li>
   <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
     <h2 class="returned-item__location">
-      <div class="returned-item__location--primary">LG / XL</div>
-      <div class="returned-item__location--secondary">Apparel</div>
+      <div class="returned-item__location--primary"></div>
+      <div class="returned-item__location--secondary"></div>
     </h2>
     <aside class="returned-item__status"></aside>
   </li>
   <li class="returned-item returned-item--5 returned-item--done" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
-      <div class="returned-item__location--primary">LG / XL</div>
-      <div class="returned-item__location--secondary">Apparel</div>
+      <div class="returned-item__location--primary"></div>
+      <div class="returned-item__location--secondary"></div>
     </h2>
     <aside class="returned-item__status"></aside>
   </li>
@@ -73,7 +73,6 @@
 
 <script type="text/javascript">
   $(function(){
-    item_status();
     set_location();
 
     if ($(".returned-item--current").length == 0) {
@@ -94,6 +93,7 @@
 
       $(".returned-item").removeClass("returned-item--origin").removeClass("returned-item--current");
       $(this).addClass("returned-item--current returned-item--done");
+      $(".returned-item--current").removeClass("returned-item--sold returned-item--lg returned-item--md returned-item--sm returned-item--xs returned-item--dmg returned-item--jewelry returned-item--clr returned-item--acc returned-item--rtv").addClass("returned-item--"+$(".returned-item--current").data("item-location"));
 
       rearrange($(this));
       color_banner();
@@ -121,6 +121,9 @@
     	else if(e.keyCode==56){
         sold($(".returned-item--current"));
     	}
+    	else if(e.keyCode==57){
+        set_in($(".returned-item--current"));
+    	}
     });
 
   });
@@ -138,15 +141,25 @@
       override = e.data("item-override");
       e.data("item-location", override);
     }
+    e.data("item-status", "in");
     write_location(e, e.data("item-type"));
+    item_status();
     color_banner();
   }
 
   function sold(e) {
     e.data("item-status", "sold");
     e.data("item-location", "sold");
-    item_status();
     write_location(e, e.data("item-type"));
+    item_status();
+    color_banner();
+  }
+
+  function set_in(e) {
+    e.data("item-status", "in");
+    set_location();
+    write_location(e, e.data("item-type"));
+    item_status();
     color_banner();
   }
 
@@ -251,14 +264,14 @@
     }
     e.find(".returned-item__location--primary").text(primary);
     e.find(".returned-item__location--secondary").text(secondary);
+    $(".returned-item--current").removeClass("returned-item--sold returned-item--lg returned-item--md returned-item--sm returned-item--xs returned-item--dmg returned-item--jewelry returned-item--clr returned-item--acc returned-item--rtv").addClass("returned-item--"+e.data("item-location"));
   }
 
   function color_banner() {
     current_location = $(".returned-item--current").data("item-location");
-    $(".returns-banner").removeClass("current returns-banner--in returns-banner--sold returns-banner--acc returns-banner--out returns-banner--sold returns-banner--jewelry returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--dmg returns-banner--clr returns-banner--dmg");
+    $(".returns-banner").removeClass().addClass("returns-banner");
 
     setTimeout(function(){
-      $(".returned-item--current").removeClass("returned-item--sold returned-item--dmg").addClass("returned-item--" + current_location);
       $(".returns-banner").addClass("returns-banner--"+current_location+" current");
     }, 200);
   }

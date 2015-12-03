@@ -4713,7 +4713,7 @@ stylesheets
   .returned-item--dmg {
     color: #FFFFFF !important; }
   .returned-item--sold {
-    color: #444444 !important; }
+    color: #FFFFFF !important; }
   .returned-item::after {
     transition: all 0.4s;
     content: "";
