@@ -156,8 +156,12 @@
   }
 
   function set_in(e) {
+    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
+    }
+    else {
+      e.data("item-override", "");
+    }
     e.data("item-status", "in");
-    e.data("item-override", "");
     set_location();
     write_location(e, e.data("item-type"));
     item_status();
