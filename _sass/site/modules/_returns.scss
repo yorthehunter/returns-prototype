@@ -32,6 +32,7 @@ $return-item-title-height: 15vh;
   &--rtv::after { background-color: $base-rtv; }
   &--clr::after { background-color: $base-clr; }
   &--dmg::after { background-color: $base-dmg; }
+  &--sold::after{ background-color: green; }
   &--lg::after  { background-color: $base-lg; }
   &--md::after  { background-color: $base-md; }
   &--sm::after  { background-color: $base-sm; }
@@ -61,7 +62,8 @@ $return-item-title-height: 15vh;
   &--acc { color: #FFFFFF !important; }
   &--jewelry { color: #FFFFFF !important; }
   &--dmg { color: #FFFFFF !important; }
-  
+  &--sold{ color: #444444 !important; }
+
   &::after {
     transition: all 0.4s;
     content: "";

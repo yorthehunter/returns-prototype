@@ -103,20 +103,23 @@
     	if(e.keyCode==49){
     		$(".returned-item--1").click();
     	}
-    	if(e.keyCode==50){
+    	else if(e.keyCode==50){
     		$(".returned-item--2").click();
     	}
-    	if(e.keyCode==51){
+    	else if(e.keyCode==51){
     		$(".returned-item--3").click();
     	}
-    	if(e.keyCode==52){
+    	else if(e.keyCode==52){
     		$(".returned-item--4").click();
     	}
-    	if(e.keyCode==53){
+    	else if(e.keyCode==53){
     		$(".returned-item--5").click();
     	}
-    	if(e.keyCode==55){
+    	else if(e.keyCode==55){
         damage_out($(".returned-item--current"));
+    	}
+    	else if(e.keyCode==56){
+        sold($(".returned-item--current"));
     	}
     });
 
@@ -135,6 +138,14 @@
       override = e.data("item-override");
       e.data("item-location", override);
     }
+    write_location(e, e.data("item-type"));
+    color_banner();
+  }
+
+  function sold(e) {
+    e.data("item-status", "sold");
+    e.data("item-location", "sold");
+    item_status();
     write_location(e, e.data("item-type"));
     color_banner();
   }
@@ -182,6 +193,10 @@
 
   function write_location(e, t) {
     switch (e.data("item-location")) {
+      case "sold":
+        primary   = "SOLD";
+        seconday  = "all";
+        break;
       case "rtv":
         primary   = "R T V";
         secondary = "all";
@@ -240,10 +255,10 @@
 
   function color_banner() {
     current_location = $(".returned-item--current").data("item-location");
-    $(".returns-banner").removeClass("current returns-banner--in returns-banner--acc returns-banner--out returns-banner--sold returns-banner--jewelry returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--dmg returns-banner--clr returns-banner--dmg");
+    $(".returns-banner").removeClass("current returns-banner--in returns-banner--sold returns-banner--acc returns-banner--out returns-banner--sold returns-banner--jewelry returns-banner--lg returns-banner--md returns-banner--sm returns-banner--xs returns-banner--rtv returns-banner--dmg returns-banner--clr returns-banner--dmg");
 
     setTimeout(function(){
-      $(".returned-item--current").addClass("returned-item--" + current_location);
+      $(".returned-item--current").removeClass("returned-item--sold returned-item--dmg").addClass("returned-item--" + current_location);
       $(".returns-banner").addClass("returns-banner--"+current_location+" current");
     }, 200);
   }

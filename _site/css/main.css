@@ -4670,6 +4670,8 @@ stylesheets
     background-color: #37E3E4; }
   .returns-banner--dmg::after {
     background-color: #555555; }
+  .returns-banner--sold::after {
+    background-color: green; }
   .returns-banner--lg::after {
     background-color: #D50000; }
   .returns-banner--md::after {
@@ -4710,6 +4712,8 @@ stylesheets
     color: #FFFFFF !important; }
   .returned-item--dmg {
     color: #FFFFFF !important; }
+  .returned-item--sold {
+    color: #444444 !important; }
   .returned-item::after {
     transition: all 0.4s;
     content: "";
