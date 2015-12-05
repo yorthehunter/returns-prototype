@@ -19,35 +19,41 @@ permalink: /returns-prototype/
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"><span></span></aside>
-  </li>
+    <footer class="returned-item__footer">
+      <aside class="returned-item__status"><span></span></aside>
+    </footer>  </li>
   <li class="returned-item returned-item--4 returned-item--done" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"><span></span></aside>
-  </li>
+    <footer class="returned-item__footer">
+      <aside class="returned-item__status"><span></span></aside>
+    </footer>  </li>
   <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"><span></span></aside>
-  </li>
+    <footer class="returned-item__footer">
+      <aside class="returned-item__status"><span></span></aside>
+    </footer>  </li>
   <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"><span></span></aside>
-  </li>
+    <footer class="returned-item__footer">
+      <aside class="returned-item__status"><span></span></aside>
+    </footer>  </li>
   <li class="returned-item returned-item--5 returned-item--done" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
     </h2>
-    <aside class="returned-item__status"><span></span></aside>
+    <footer class="returned-item__footer">
+      <aside class="returned-item__status"><span></span></aside>
+    </footer>
   </li>
 </ul>
 <footer class="returns-banner">
@@ -56,6 +62,7 @@ permalink: /returns-prototype/
 <script type="text/javascript">
   $(function(){
     set_location();
+    item_status();
 
     if ($(".returned-item--current").length == 0) {
       $(".returned-item").addClass("returned-item--origin");
@@ -113,20 +120,17 @@ permalink: /returns-prototype/
   function damage_out(e) {
     if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
     }
-    else if (e.data("item-override") == "dmg") {
-      e.data("item-override", "");
-      type = e.data("item-type");
-      e.data("item-location", type);
+    else if (e.data("item-override") == "dmg"){
     }
     else {
       e.data("item-override", "dmg");
       override = e.data("item-override");
       e.data("item-location", override);
+      color_banner();
     }
     e.data("item-status", "in");
     write_location(e, e.data("item-type"));
     item_status();
-    color_banner();
   }
 
   function sold(e) {
@@ -138,16 +142,21 @@ permalink: /returns-prototype/
   }
 
   function set_in(e) {
-    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
+    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr" || e.data("item-status") == "in") {
+      set_location();
+      write_location(e, e.data("item-type"));
+      item_status();
+      color_banner();
     }
     else {
       e.data("item-override", "");
+      e.data("item-status", "in");
+      set_location();
+      write_location(e, e.data("item-type"));
+      item_status();
+      color_banner();
     }
-    e.data("item-status", "in");
-    set_location();
-    write_location(e, e.data("item-type"));
-    item_status();
-    color_banner();
+
   }
 
   function rearrange(e) {
@@ -158,12 +167,17 @@ permalink: /returns-prototype/
   function item_status() {
     $(".returned-item").each( function () {
       status = $(this).data("item-status");
-      indicator = $(this).find(".returned-item__status > span");
+      indicator = $(this).find(".returned-item__status");
       if (status == "sold") {
-        indicator.text("$");
+        indicator.removeClass("returned-item__status--undisclosed");
+        indicator.find("span").text("$");
+      }
+      else if (status == "" || status == "out") {
+        indicator.addClass("returned-item__status--undisclosed");
       }
       else if (status != "out") {
-        indicator.text("√");
+        indicator.removeClass("returned-item__status--undisclosed");
+        indicator.find("span").text("√");
       }
     });
   }
@@ -195,7 +209,7 @@ permalink: /returns-prototype/
     switch (e.data("item-location")) {
       case "sold":
         primary   = "SOLD";
-        seconday  = "all";
+        secondary  = "all";
         break;
       case "rtv":
         primary   = "R T V";

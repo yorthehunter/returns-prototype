@@ -346,7 +346,7 @@ body {
 /**
 * @extend these placeholders in modules to give a component a specific font size.
 */
-h1, .h1 {
+.returned-item__status, h1, .h1 {
   font-size: 2.93163rem;
   /* 1 */
   margin-bottom: 3rem;
@@ -450,7 +450,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   line-height: 6rem;
   /* 2 */ }
 
-.returned-item__status::after,
 .f-lg {
   font-size: 3.63522rem;
   /* 1 */
@@ -577,7 +576,7 @@ small,
   font-size: 0.8em;
   line-height: 1em; }
 
-.returned-item__status::after, .returned-item__location--secondary,
+.returned-item__status, .returned-item__location--secondary,
 .uppercase {
   text-transform: uppercase; }
 
@@ -592,7 +591,7 @@ small,
 .text-l {
   text-align: left   !important; }
 
-.returned-item__status::after, .returned-item__info, .returned-item__location,
+.returned-item__status, .returned-item__info, .returned-item__location,
 .text-c {
   text-align: center !important; }
 
@@ -607,7 +606,7 @@ small,
 .dark {
   color: black; }
 
-.returned-item__status::after, .returned-item__location--secondary, .returned-item__type,
+.returned-item__status, .returned-item__location--secondary, .returned-item__type,
 .thin {
   font-weight: 300; }
 
@@ -663,14 +662,14 @@ small,
     line-height: 4rem;
     /* 2 */ }
 
-  .returned-item__status::after, .f-lg {
+  .f-lg {
     font-size: 2.36421rem;
     /* 1 */
     margin-bottom: 2rem;
     line-height: 3rem;
     /* 2 */ }
 
-  .h1 {
+  .returned-item__status, .h1 {
     font-size: 2.36421rem;
     /* 1 */
     margin-bottom: 2rem;
@@ -691,14 +690,14 @@ small,
     line-height: 2rem;
     /* 2 */ } }
 @media screen and (max-width: 768px) {
-  .returned-item__status::after, .f-lg, .f-xl {
+  .f-lg, .f-xl {
     font-size: 1.90662rem;
     /* 1 */
     margin-bottom: 2rem;
     line-height: 2rem;
     /* 2 */ }
 
-  .h1 {
+  .returned-item__status, .h1 {
     font-size: 1.90662rem;
     /* 1 */
     margin-bottom: 2rem;
@@ -1875,7 +1874,7 @@ development environment.
 
 .returned-items-list,
 .list-flex, .returned-items-list li,
-.list-flex li, .returned-item__status::after, .returned-item__info,
+.list-flex li, .returned-item__status, .returned-item__info,
 .m0 {
   margin-top: 0rem !important;
   margin-bottom: 0rem !important; }
@@ -2270,11 +2269,11 @@ development environment.
   </div>
   ```
   */
-.returns-banner::after, .returned-item__status::after, .returned-item__location,
+.returns-banner::after, .returned-item__location,
 .pos-abs {
   position: absolute; }
 
-.returned-items-list,
+.returned-items-list, .returned-item__status,
 .pos-rel {
   position: relative; }
 
@@ -2284,15 +2283,14 @@ development environment.
 .pos-t {
   top: 0; }
 
-.returned-item__status::after,
 .pos-b {
   bottom: 0; }
 
-.returned-item__status::after, .returned-item__location,
+.returned-item__location,
 .pos-l {
   left: 0; }
 
-.returned-item__status::after, .returned-item__location,
+.returned-item__location,
 .pos-r {
   right: 0; }
 
@@ -2307,7 +2305,7 @@ development environment.
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.returned-items-list, .returned-item__status::after, .returned-item__info,
+.returned-items-list, .returned-item__info,
 .z1 {
   z-index: 1; }
 
@@ -3880,7 +3878,6 @@ category: theme - decorations
 <p class="shadowed-link-light-border"> light link border using shadow </p>
 ```
 */
-.returned-item--current,
 .bordered {
   border: 1px solid; }
 
@@ -3914,7 +3911,6 @@ category: theme - decorations
 .round-sm {
   border-radius: 2px; }
 
-.returned-item--current,
 .border-md {
   border-width: 4px; }
 
@@ -3974,7 +3970,6 @@ category: theme - decorations
 .border-gray-lightest {
   border-color: #eeeff4; }
 
-.returned-item--current,
 .border-gray-light {
   border-color: #ccd2de; }
 
@@ -4294,7 +4289,7 @@ category: theme - decorations
 .color-ghost-black-base {
   color: rgba(0, 0, 0, 0.25) !important; }
 
-.returned-item__status::after,
+.returned-item__status,
 .bg-ghost-black-dark {
   background-color: rgba(0, 0, 0, 0.5) !important; }
 
@@ -4729,7 +4724,7 @@ stylesheets
     opacity: 1; }
   .returned-item--origin:hover {
     cursor: pointer; }
-  .returned-item--origin.returned-item--done {
+  .returned-item--origin.returned-item--done::after {
     opacity: 0.4; }
   .returned-item--origin::after {
     opacity: 1; }
@@ -4742,7 +4737,15 @@ stylesheets
     overflow: visible; }
     .returned-item--current::after {
       opacity: 1; }
-  .returned-item__status::after {
+  .returned-item__footer {
+    height: 10rem;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; }
+  .returned-item__status {
     color: #FFFFFF;
     position: absolute;
     transform: rotate(-10deg);
@@ -4751,16 +4754,19 @@ stylesheets
     right: 0;
     height: 10rem;
     width: 130%;
-    margin-left: -15%; }
-  .returned-item__status > span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    text-align: right;
-    padding-right: 15%;
-    transform: rotate(8deg); }
+    margin-left: -15%;
+    transition: all .4s; }
+    .returned-item__status > span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: right;
+      padding-right: 15%;
+      transform: rotate(8deg); }
+    .returned-item__status--undisclosed {
+      height: 0; }
   .returned-item__info {
     position: absolute;
     bottom: -14vh;

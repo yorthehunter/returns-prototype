@@ -88,7 +88,7 @@ $return-item-title-height: 15vh;
       cursor: pointer;
     }
 
-    &.returned-item--done {
+    &.returned-item--done::after {
       opacity: 0.4;
     }
 
@@ -106,7 +106,7 @@ $return-item-title-height: 15vh;
     min-height: (100vh - $return-item-title-height);
     min-width: 480px;
     overflow: visible;
-    @extend %bordered, %border-gray-light, %border-md;
+    // @extend %bordered, %border-gray-light, %border-md;
 
     &::after {;
       opacity: 1;
@@ -122,10 +122,18 @@ $return-item-title-height: 15vh;
     // &.returned-item--acc { border: 3px solid $base-acc; }
   }
 
-  &__status {
+  &__footer {
+    height: 10rem;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
 
-    &::after {
-      @extend %pos-abs, %pos-b, %pos-r, %pos-l, %text-c, %bg-ghost-black-dark, %thin, %z1, %uppercase, %f-lg, %m0 !optional;
+  &__status {
+      @extend %pos-rel, %text-c, %bg-ghost-black-dark, %thin, %uppercase, %h1, %m0 !optional;
       color: #FFFFFF;
       position: absolute;
       transform: rotate(-10deg);
@@ -135,8 +143,7 @@ $return-item-title-height: 15vh;
       height: 10rem;
       width: 130%;
       margin-left: -15%;
-    }
-
+      transition: all .4s;
 
     > span {
       position: absolute;
@@ -147,6 +154,10 @@ $return-item-title-height: 15vh;
       text-align: right;
       padding-right: 15%;
       transform: rotate(8deg);
+    }
+
+    &--undisclosed {
+      height: 0;
     }
   }
 
