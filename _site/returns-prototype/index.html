@@ -30,6 +30,7 @@
   .returned-item--5::after { background-image: url(/assets/images/item_5.png); }
 </style>
 
+<button class="btn btn-xs btn-primary pos-abs pos-b pos-r z10 js-randomize">Randomize</button>
 
 <ul class="returned-items-list">
   <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
@@ -40,7 +41,7 @@
     <footer class="returned-item__footer">
       <aside class="returned-item__status"><span></span></aside>
     </footer>  </li>
-  <li class="returned-item returned-item--4 returned-item--done" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
+  <li class="returned-item returned-item--4" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
@@ -64,7 +65,7 @@
     <footer class="returned-item__footer">
       <aside class="returned-item__status"><span></span></aside>
     </footer>  </li>
-  <li class="returned-item returned-item--5 returned-item--done" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
+  <li class="returned-item returned-item--5" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
     <h2 class="returned-item__location">
       <div class="returned-item__location--primary"></div>
       <div class="returned-item__location--secondary"></div>
@@ -79,14 +80,8 @@
 
 <script type="text/javascript">
   $(function(){
-    set_location();
-    item_status();
 
-    if ($(".returned-item--current").length == 0) {
-      $(".returned-item").addClass("returned-item--origin");
-    }
-
-    rearrange();
+    setup();
 
     $(".returned-item").click(function(){
       this_status = $(this).data("item-status");
@@ -133,7 +128,44 @@
     	}
     });
 
+    $(".js-randomize").click(function(){
+      status_array   = ["out", "sold"];
+      type_array     = ["lg / xl", "md", "sm", "xs", "jewelry"];
+      override_array = ["","","rtv", "clr"];
+
+      $.each([ 1,2,3,4,5 ], function( index, value ) {
+        num1 = Math.floor(Math.random()*status_array.length);
+        num2 = Math.floor(Math.random()*type_array.length);
+        num3 = Math.floor(Math.random()*override_array.length);
+        status   =   status_array[num1];
+        type     =     type_array[num2];
+        override = override_array[num3];
+
+        $(".returned-item--"+index).data("item-status", status).data("item-type", type).data("item-override", override).data("location","");
+      });
+
+      setup();
+    });
+
   });
+
+  function setup() {
+    set_location();
+    item_status();
+
+    if ($(".returned-item--current").length == 0) {
+      $(".returned-item").addClass("returned-item--origin");
+    }
+
+    $(".returned-item--current").removeClass("returned-item--current");
+
+    $(".returned-item--done").removeClass("returned-item--done");
+    $('[data-item-status="sold"]').addClass("returned-item--done");
+
+    done_items = $(".returned-item--done");
+    $(".returned-items-list").append(done_items, $(".returned-item:not('.returned-item--done')"));
+
+  }
 
   function set_dmg(e) {
     if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {

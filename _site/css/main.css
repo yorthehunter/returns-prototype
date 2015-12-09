@@ -3637,6 +3637,16 @@ semantically. Use at your own discretion.*
   .btn-link.active {
     background-color: rgba(0, 0, 0, 0.15); }
 
+@media screen and (max-width: 480px) {
+  .btn:not(.btn-inline) {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important; }
+    .btn:not(.btn-inline):not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]) {
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+
+  /* 1 */ }
 .btn-outline-dark {
   border-width: 2px;
   border-color: rgba(255, 255, 255, 0.4);
