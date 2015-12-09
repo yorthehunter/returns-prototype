@@ -123,7 +123,7 @@
     		$(".returned-item--5").click();
     	}
     	else if(e.keyCode==55){
-        damage_out($(".returned-item--current"));
+        set_dmg($(".returned-item--current"));
     	}
     	else if(e.keyCode==56){
         sold($(".returned-item--current"));
@@ -135,7 +135,7 @@
 
   });
 
-  function damage_out(e) {
+  function set_dmg(e) {
     if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
     }
     else if (e.data("item-override") == "dmg"){
@@ -160,7 +160,8 @@
   }
 
   function set_in(e) {
-    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr" || e.data("item-status") == "in") {
+    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
+      e.data("item-status", "in");
       set_location();
       write_location(e, e.data("item-type"));
       item_status();
