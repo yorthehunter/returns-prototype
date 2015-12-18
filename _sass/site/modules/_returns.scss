@@ -52,6 +52,7 @@ $return-item-title-height: 15vh;
   min-height: 70vh;
   max-height: (100vh - ($return-item-title-height * 1.5));
   transition: all 0.4s;
+  min-width: 100px;
 
   &--rtv { color: #444444 !important; }
   &--clr { color: #444444 !important; }
@@ -103,10 +104,20 @@ $return-item-title-height: 15vh;
   }
 
   &--current {
-    min-height: (100vh - $return-item-title-height);
-    min-width: 480px;
+    margin-left:  10px !important;
+    margin-right: 10px !important;
+    animation: growIn 0.4s ease-out forwards;
     overflow: visible;
     // @extend %bordered, %border-gray-light, %border-md;
+
+    @at-root {
+      @keyframes growIn {
+        to {
+          min-height: (100vh - $return-item-title-height);
+          min-width: 480px;
+        }
+      }
+    }
 
     &::after {;
       opacity: 1;

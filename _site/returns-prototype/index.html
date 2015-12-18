@@ -30,53 +30,55 @@
   .returned-item--5::after { background-image: url(/assets/images/item_5.png); }
 </style>
 
-<button class="btn btn-xs btn-primary pos-abs pos-b pos-r z10 js-randomize">Randomize</button>
+<div class="container flex" style="padding-top: 10px;">
+  <ul class="returned-items-list">
+    <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--4" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--5" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>
+    </li>
+  </ul>
+  <footer class="returns-banner">
+  </footer>
+</div>
 
-<ul class="returned-items-list">
-  <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
-    <h2 class="returned-item__location">
-      <div class="returned-item__location--primary"></div>
-      <div class="returned-item__location--secondary"></div>
-    </h2>
-    <footer class="returned-item__footer">
-      <aside class="returned-item__status"><span></span></aside>
-    </footer>  </li>
-  <li class="returned-item returned-item--4" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
-    <h2 class="returned-item__location">
-      <div class="returned-item__location--primary"></div>
-      <div class="returned-item__location--secondary"></div>
-    </h2>
-    <footer class="returned-item__footer">
-      <aside class="returned-item__status"><span></span></aside>
-    </footer>  </li>
-  <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
-    <h2 class="returned-item__location">
-      <div class="returned-item__location--primary"></div>
-      <div class="returned-item__location--secondary"></div>
-    </h2>
-    <footer class="returned-item__footer">
-      <aside class="returned-item__status"><span></span></aside>
-    </footer>  </li>
-  <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
-    <h2 class="returned-item__location">
-      <div class="returned-item__location--primary"></div>
-      <div class="returned-item__location--secondary"></div>
-    </h2>
-    <footer class="returned-item__footer">
-      <aside class="returned-item__status"><span></span></aside>
-    </footer>  </li>
-  <li class="returned-item returned-item--5" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
-    <h2 class="returned-item__location">
-      <div class="returned-item__location--primary"></div>
-      <div class="returned-item__location--secondary"></div>
-    </h2>
-    <footer class="returned-item__footer">
-      <aside class="returned-item__status"><span></span></aside>
-    </footer>
-  </li>
-</ul>
-<footer class="returns-banner">
-</footer>
+<button class="btn btn-xs btn-primary pos-abs pos-b pos-r z10 js-randomize">Randomize</button>
 
 <script type="text/javascript">
   $(function(){
@@ -101,21 +103,21 @@
       color_banner();
     });
 
-    $('body').bind('keypress', function(e) {
+    $('body').bind('keyup', function(e) {
     	if(e.keyCode==49){
-    		$(".returned-item--1").click();
+    		$(".returned-item:nth-child(1)").click();
     	}
     	else if(e.keyCode==50){
-    		$(".returned-item--2").click();
+    		$(".returned-item:nth-child(2)").click();
     	}
     	else if(e.keyCode==51){
-    		$(".returned-item--3").click();
+    		$(".returned-item:nth-child(3)").click();
     	}
     	else if(e.keyCode==52){
-    		$(".returned-item--4").click();
+    		$(".returned-item:nth-child(4)").click();
     	}
     	else if(e.keyCode==53){
-    		$(".returned-item--5").click();
+    		$(".returned-item:nth-child(5)").click();
     	}
     	else if(e.keyCode==55){
         set_dmg($(".returned-item--current"));
