@@ -1,0 +1,49 @@
+<div class="container flex" style="padding-top: 10px;">
+  <ul class="returned-items-list">
+    <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
+
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <img src="{{site.baseurl}}/assets/images/item_1.png">
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--4" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>  </li>
+    <li class="returned-item returned-item--5" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
+      <h2 class="returned-item__location">
+        <div class="returned-item__location--primary"></div>
+        <div class="returned-item__location--secondary"></div>
+      </h2>
+      <footer class="returned-item__footer">
+        <aside class="returned-item__status"><span></span></aside>
+      </footer>
+    </li>
+  </ul>
+  <footer class="returns-banner">
+  </footer>
+</div>

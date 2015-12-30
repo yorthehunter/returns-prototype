@@ -12,53 +12,53 @@ permalink: /returns-prototype/
   .returned-item--5::after { background-image: url({{'/assets/images/item_5.png' | prepend: site.baseurl }}); }
 </style>
 
-<div class="container flex" style="padding-top: 10px;">
-  <ul class="returned-items-list">
-    <li class="returned-item returned-item--1" data-item-status="out" data-item-type="jewelry" data-item-override="" data-item-location="">
-      <h2 class="returned-item__location">
-        <div class="returned-item__location--primary"></div>
-        <div class="returned-item__location--secondary"></div>
-      </h2>
-      <footer class="returned-item__footer">
-        <aside class="returned-item__status"><span></span></aside>
-      </footer>  </li>
-    <li class="returned-item returned-item--4" data-item-status="sold" data-item-override="" data-item-type="lg / xl" data-item-location="">
-      <h2 class="returned-item__location">
-        <div class="returned-item__location--primary"></div>
-        <div class="returned-item__location--secondary"></div>
-      </h2>
-      <footer class="returned-item__footer">
-        <aside class="returned-item__status"><span></span></aside>
-      </footer>  </li>
-    <li class="returned-item returned-item--2" data-item-status="out" data-item-type="md" data-item-override="" data-item-location="">
-      <h2 class="returned-item__location">
-        <div class="returned-item__location--primary"></div>
-        <div class="returned-item__location--secondary"></div>
-      </h2>
-      <footer class="returned-item__footer">
-        <aside class="returned-item__status"><span></span></aside>
-      </footer>  </li>
-    <li class="returned-item returned-item--3" data-item-status="out" data-item-type="md" data-item-override="rtv" data-item-location="">
-      <h2 class="returned-item__location">
-        <div class="returned-item__location--primary"></div>
-        <div class="returned-item__location--secondary"></div>
-      </h2>
-      <footer class="returned-item__footer">
-        <aside class="returned-item__status"><span></span></aside>
-      </footer>  </li>
-    <li class="returned-item returned-item--5" data-item-status="sold" data-item-type="xs" data-item-override="" data-item-location="">
-      <h2 class="returned-item__location">
-        <div class="returned-item__location--primary"></div>
-        <div class="returned-item__location--secondary"></div>
-      </h2>
-      <footer class="returned-item__footer">
-        <aside class="returned-item__status"><span></span></aside>
-      </footer>
-    </li>
-  </ul>
-  <footer class="returns-banner">
-  </footer>
-</div>
+<ul class="returned-items-list">
+  <li class="returned-item"
+    data-item-status   = "out"
+    data-item-type     = "purses"
+    data-item-override = ""
+    data-item-location = ""
+    date-item-id       = 1234567>
+    <img src="{{site.baseurl}}/assets/images/item_1.png">
+  </li>
+  <li class="returned-item"
+    data-item-status   = "sold"
+    data-item-override = ""
+    data-item-type     = "lg / xl"
+    data-item-location = ""
+    date-item-id       = 1234567>
+    <img src="{{site.baseurl}}/assets/images/item_2.png">
+  </li>
+  <li class="returned-item"
+    data-item-status   = "out"
+    data-item-type     = "md"
+    data-item-override = ""
+    data-item-location = ""
+    date-item-id       = 1234567>
+    <img src="{{site.baseurl}}/assets/images/item_3.png">
+  </li>
+  <li class="returned-item"
+    data-item-status   = "out"
+    data-item-type     = "md"
+    data-item-override = "rtv"
+    data-item-location = ""
+    date-item-id       = 1234567>
+    <img src="{{site.baseurl}}/assets/images/item_4.png">
+  </li>
+  <li class="returned-item"
+    data-item-status   = "sold"
+    data-item-type     = "xs"
+    data-item-override = ""
+    data-item-location = ""
+    date-item-id       = 1234567>
+    <img src="{{site.baseurl}}/assets/images/item_5.png">
+  </li>
+</ul>
+<footer class="return-info bounceInUp animated"></footer>
+
+<div class="returns-banner"></div>
+
+
 
 <button class="btn btn-xs btn-primary pos-abs pos-b pos-r z10 js-randomize">Randomize</button>
 
@@ -82,6 +82,7 @@ permalink: /returns-prototype/
       $(".returned-item--current").removeClass("returned-item--sold returned-item--lg returned-item--md returned-item--sm returned-item--xs returned-item--dmg returned-item--jewelry returned-item--clr returned-item--acc returned-item--rtv").addClass("returned-item--"+$(".returned-item--current").data("item-location"));
 
       rearrange($(this));
+      write_location($(this), $(this).data("item-type"));
       color_banner();
     });
 
@@ -148,7 +149,6 @@ permalink: /returns-prototype/
 
     done_items = $(".returned-item--done");
     $(".returned-items-list").append(done_items, $(".returned-item:not('.returned-item--done')"));
-
   }
 
   function set_dmg(e) {
@@ -229,11 +229,8 @@ permalink: /returns-prototype/
       else if (override == "dmg") {
         $(this).data("item-location", override);
       }
-      else if (type == "xs" || type == "sm" || type == "md" || type == "lg / xl") {
-        $(this).data("item-location", type);
-      }
       else {
-        $(this).data("item-location", "jewelry");
+        $(this).data("item-location", type);
       }
 
       write_location($(this), type);
@@ -241,74 +238,90 @@ permalink: /returns-prototype/
   }
 
   function write_location(e, t) {
-    switch (e.data("item-location")) {
-      case "sold":
-        primary   = "SOLD";
-        secondary  = "all";
-        break;
-      case "rtv":
-        primary   = "R T V";
-        secondary = "all";
-        break;
-      case "clr":
-        primary   = "C L R";
-        secondary = "all";
-        break;
-        break;
-      case "dmg":
-        primary   = "D M G";
-        if (t != "jewelry"){
-          secondary = "non-jewelry";
-        }
-        else {
-          secondary = "jewelry";
-        }
-        break;
-      case "tangled":
-        primary   = "TANGLED";
-        secondary = "jewelry";
-        break;
-      case "label":
-        primary   = "LABEL";
-        if (t != "jewelry"){
-          secondary = "non-jewelry";
-        }
-        else {
-          secondary = "jewelry";
-        }
-        break;
-      case "lg / xl":
-        primary   = "LG / XL";
-        secondary = "apparel";
-        break;
-      case "md":
-        primary   = "MD";
-        secondary = "apparel";
-        break;
-      case "sm":
-        primary   = "SM";
-        secondary = "apparel";
-        break;
-      case "xs":
-        primary   = "XS";
-        secondary = "apparel";
-        break;
-      case "jewelry":
-        primary   = "PURSES";
-        secondary = "& scarves";
-        break;
+    loc    = e.data("item-location");
+    width  = $(".returned-item--current").width();
+    offset = $(".returned-item--current").offset();
+    target = $(".return-info");
+    if (offset != null) {
+      target.width(width).offset({ left: offset.left });
     }
-    e.find(".returned-item__location--primary").text(primary);
-    e.find(".returned-item__location--secondary").text(secondary);
+    if (loc == "purses"){
+      target.addClass("return-info--double-lined").html("purses<br><span>& scarves</span>")
+    }
+    else if (loc == "bracelets"){
+      target.addClass("return-info--double-lined").html("bracelets<br><span>& earrings</span>")
+    }
+    else {
+      target.removeClass("return-info--double-lined").html(loc);
+    }
+    // Some silly js horseshit that reruns a CSS animation. God.
+    target.removeClass('bounceInUp');
+    setTimeout(
+        function(){target.addClass('bounceInUp')}
+        , 1);
+
     $(".returned-item--current").removeClass("returned-item--sold returned-item--lg returned-item--md returned-item--sm returned-item--xs returned-item--dmg returned-item--jewelry returned-item--clr returned-item--acc returned-item--rtv").addClass("returned-item--"+e.data("item-location"));
   }
 
   function color_banner() {
     current_location = $(".returned-item--current").data("item-location");
     $(".returns-banner").removeClass().addClass("returns-banner");
+    $("body").removeClass().addClass(current_location);
 
     setTimeout(function(){
       $(".returns-banner").addClass("returns-banner--"+current_location+" current");
-    }, 200);
+    }, 300);
   }
+
+  function slideSwap($set1, $set2) {
+
+    //$elem.append(infoString($elem));
+    //$after.append(infoString($after));
+    $set1.css("color", "red");
+    $set2.css("color", "blue");
+    var $set3 = $set2.last().nextAll();
+    $set3.css("color", "green");
+
+    var mb_prev = cssprop($set1.first().prev(), "margin-bottom");
+    if (isNaN(mb_prev)) mb_prev = 0;
+    var mt_next = cssprop($set2.last().next(), "margin-top");
+    if (isNaN(mt_next)) mt_next = 0;
+
+    var mt_1 = cssprop($set1.first(), "margin-top");
+    var mb_1 = cssprop($set1.last(), "margin-bottom");
+    var mt_2 = cssprop($set2.first(), "margin-top");
+    var mb_2 = cssprop($set2.last(), "margin-bottom");
+
+    var h1 = $set1.last().offset().top + $set1.last().outerHeight() - $set1.first().offset().top;
+    var h2 = $set2.last().offset().top + $set2.last().outerHeight() - $set2.first().offset().top;
+
+    move1 = h2 + Math.max(mb_2, mt_1) + Math.max(mb_prev, mt_2) - Math.max(mb_prev, mt_1);
+    move2 = -h1 - Math.max(mb_1, mt_2) - Math.max(mb_prev, mt_1) + Math.max(mb_prev, mt_2);
+    move3 = move1 + $set1.first().offset().top + h1 - $set2.first().offset().top - h2 +
+        Math.max(mb_1,mt_next) - Math.max(mb_2,mt_next);
+
+    // let's move stuff
+    $set1.css('position', 'relative');
+    $set2.css('position', 'relative');
+    $set3.css('position', 'relative');
+    $set1.animate({'top': move1}, {duration: 1000});
+    $set3.animate({'top': move3}, {duration: 500});
+    $set2.animate({'top': move2}, {duration: 1000, complete: function() {
+        // rearrange the DOM and restore positioning when we're done moving
+        $set1.insertAfter($set2.last())
+        $set1.css({'position': 'static', 'top': 0});
+        $set2.css({'position': 'static', 'top': 0});
+        $set3.css({'position': 'static', 'top': 0});
+      }
+    });
+
+  }
+
+
+
+
+
+
+
+
 </script>

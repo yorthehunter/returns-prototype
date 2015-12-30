@@ -346,7 +346,7 @@ body {
 /**
 * @extend these placeholders in modules to give a component a specific font size.
 */
-.returned-item__status, h1, .h1 {
+h1, .h1 {
   font-size: 2.93163rem;
   /* 1 */
   margin-bottom: 3rem;
@@ -367,7 +367,7 @@ h3, .h3 {
   line-height: 2rem;
   /* 2 */ }
 
-.returned-item__location--secondary, h4, .h4 {
+h4, .h4 {
   font-size: 1.5376rem;
   /* 1 */
   margin-bottom: 1rem;
@@ -571,12 +571,13 @@ sup {
 sub {
   bottom: -0.25rem; }
 
+.return-info--double-lined > span,
 small,
 .small {
   font-size: 0.8em;
   line-height: 1em; }
 
-.returned-item__status, .returned-item__location--secondary,
+.return-info,
 .uppercase {
   text-transform: uppercase; }
 
@@ -591,11 +592,9 @@ small,
 .text-l {
   text-align: left   !important; }
 
-.returned-item__status, .returned-item__info, .returned-item__location,
 .text-c {
   text-align: center !important; }
 
-.returned-items-list li.list-header,
 .list-flex li.list-header,
 .text-r {
   text-align: right  !important; }
@@ -606,11 +605,10 @@ small,
 .dark {
   color: black; }
 
-.returned-item__status, .returned-item__location--secondary, .returned-item__type,
+.return-info--double-lined > span,
 .thin {
   font-weight: 300; }
 
-.returned-item__location--primary,
 .thick {
   font-weight: 700; }
 
@@ -669,7 +667,7 @@ small,
     line-height: 3rem;
     /* 2 */ }
 
-  .returned-item__status, .h1 {
+  .h1 {
     font-size: 2.36421rem;
     /* 1 */
     margin-bottom: 2rem;
@@ -697,7 +695,7 @@ small,
     line-height: 2rem;
     /* 2 */ }
 
-  .returned-item__status, .h1 {
+  .h1 {
     font-size: 1.90662rem;
     /* 1 */
     margin-bottom: 2rem;
@@ -711,7 +709,7 @@ small,
     line-height: 2rem;
     /* 2 */ }
 
-  .returned-item__location--secondary, .h3, .h4 {
+  .h3, .h4 {
     font-size: 1.24rem;
     /* 1 */
     margin-bottom: 1rem;
@@ -971,6 +969,7 @@ dd {
 dl > dd:last-child {
   margin-bottom: 0; }
 
+.returned-items-list,
 .list-unstyled {
   padding-left: 0;
   list-style: none; }
@@ -1649,18 +1648,13 @@ ways to extend a `form` or `input` to make life easier.
   ```
 
   */
-.returned-items-list,
 .list-flex,
 .flex-container {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex; }
-  .returned-items-list li,
   .list-flex li,
-  .returned-items-list .flex-item,
   .list-flex .flex-item,
-  .flex-container .returned-items-list li,
-  .returned-items-list .flex-container li,
   .flex-container .list-flex li,
   .list-flex .flex-container li,
   .flex-container .flex-item {
@@ -1668,37 +1662,26 @@ ways to extend a `form` or `input` to make life easier.
     margin-right: auto;
     -webkit-flex: 1;
     flex: 1; }
-  .returned-items-list .flex-left,
   .list-flex .flex-left,
   .flex-container .flex-left {
     margin-left: 0; }
-  .returned-items-list .flex-0,
   .list-flex .flex-0,
   .flex-container .flex-0 {
     -webkit-flex: 0;
     flex: 0; }
-  .returned-items-list li,
   .list-flex li,
-  .returned-items-list .flex-2,
   .list-flex .flex-2,
-  .flex-container .returned-items-list li,
-  .returned-items-list .flex-container li,
   .flex-container .list-flex li,
   .list-flex .flex-container li,
   .flex-container .flex-2 {
     -webkit-flex: 2;
     flex: 2; }
-  .returned-items-list .flex-3,
   .list-flex .flex-3,
   .flex-container .flex-3 {
     -webkit-flex: 3;
     flex: 3; }
-  .returned-items-list li.list-header,
   .list-flex li.list-header,
-  .returned-items-list .flex-4,
   .list-flex .flex-4,
-  .flex-container .returned-items-list li.list-header,
-  .returned-items-list .flex-container li.list-header,
   .flex-container .list-flex li.list-header,
   .list-flex .flex-container li.list-header,
   .flex-container .flex-4 {
@@ -1730,7 +1713,6 @@ ways to extend a `form` or `input` to make life easier.
   ```
 
   */
-.returned-items-list,
 .list-flex {
   list-style: none;
   padding-left: 0; }
@@ -1872,9 +1854,8 @@ development environment.
   margin-left: auto;
   margin-right: auto; }
 
-.returned-items-list,
-.list-flex, .returned-items-list li,
-.list-flex li, .returned-item__status, .returned-item__info,
+.list-flex,
+.list-flex li,
 .m0 {
   margin-top: 0rem !important;
   margin-bottom: 0rem !important; }
@@ -1938,7 +1919,6 @@ development environment.
 .mt8 {
   margin-top: 8rem; }
 
-.returned-item__location,
 .mb0 {
   margin-bottom: 0rem !important; }
 
@@ -1969,7 +1949,6 @@ development environment.
 .ml0 {
   margin-left: 0rem !important; }
 
-.returned-item__type,
 .ml1 {
   margin-left: 1rem; }
 
@@ -2202,7 +2181,6 @@ development environment.
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
 
-.returned-items-list li.list-header,
 .list-flex li.list-header,
 .px1 {
   padding-left: 0.5rem;
@@ -2269,11 +2247,10 @@ development environment.
   </div>
   ```
   */
-.returns-banner::after, .returned-item__location,
+.returns-banner::after,
 .pos-abs {
   position: absolute; }
 
-.returned-items-list, .returned-item__status,
 .pos-rel {
   position: relative; }
 
@@ -2286,11 +2263,9 @@ development environment.
 .pos-b {
   bottom: 0; }
 
-.returned-item__location,
 .pos-l {
   left: 0; }
 
-.returned-item__location,
 .pos-r {
   right: 0; }
 
@@ -2305,7 +2280,6 @@ development environment.
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.returned-items-list, .returned-item__info,
 .z1 {
   z-index: 1; }
 
@@ -4299,7 +4273,6 @@ category: theme - decorations
 .color-ghost-black-base {
   color: rgba(0, 0, 0, 0.25) !important; }
 
-.returned-item__status,
 .bg-ghost-black-dark {
   background-color: rgba(0, 0, 0, 0.5) !important; }
 
@@ -4342,7 +4315,6 @@ category: theme - decorations
 .ghost-base {
   opacity: 0.5; }
 
-.returned-item__location--secondary,
 .ghost-dark {
   opacity: 0.66; }
 
@@ -4648,9 +4620,95 @@ stylesheets
   .highlight .il {
     color: #099; }
 
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both; }
+
+.animated.infinite {
+  animation-iteration-count: infinite; }
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    transform: translate3d(0, -5px, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+.bounceInUp {
+  animation-name: bounceInUp; }
+
+body {
+  background: transparent; }
+
+.returned-items-list {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  display: flex;
+  align-items: top;
+  justify-content: center; }
+  .returned-items-list .returned-item {
+    overflow: hidden;
+    height: 80vh;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .returned-items-list .returned-item--current {
+      opacity: 1.0 !important;
+      min-width: 480px;
+      height: 85vh;
+      margin-left: 10px;
+      margin-right: 10px; }
+      .returned-items-list .returned-item--current:last-child {
+        margin-right: 0; }
+      .returned-items-list .returned-item--current:first-child {
+        margin-left: 0; }
+    .returned-items-list .returned-item--done {
+      opacity: 0.4; }
+    .returned-items-list .returned-item img {
+      max-height: 720px;
+      min-width: 480px; }
+    .returned-items-list .returned-item__location {
+      position: absolute;
+      text-align: center;
+      bottom: -15vh;
+      height: 15vh;
+      overflow: hidden;
+      left: 0;
+      right: 0; }
+
+.return-info {
+  height: calc(15vh - 10px);
+  line-height: calc(15vh - 10px);
+  text-align: center;
+  font-size: calc(12vh - 10px); }
+  .return-info--double-lined {
+    font-size: calc(6vh - 10px);
+    line-height: calc(6vh - 10px); }
+
+body.sold .return-info,
+body.dmg .return-info,
+body.necklaces .return-info,
+body.bracelets .return-info,
+body.purses .return-info,
+body.md .return-info,
+body.lg .return-info {
+  color: white; }
+
 .returns-banner {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   left: 0;
   right: 0;
   bottom: 0;
@@ -4660,7 +4718,7 @@ stylesheets
     right: 0; }
   .returns-banner::after {
     content: "";
-    transition: right 0.2s linear;
+    transition: right 0.3s ease;
     transform: skewX(-45deg);
     margin-left: -50%;
     margin-right: -50%;
@@ -4687,109 +4745,9 @@ stylesheets
     background-color: #00FF00; }
   .returns-banner--acc::after {
     background-color: #FF8000; }
-  .returns-banner--jewelry::after {
+  .returns-banner--necklaces::after {
     background-color: #FF8000; }
-
-.returned-items-list {
-  height: 100vh; }
-
-.returned-item {
-  overflow: hidden;
-  position: relative;
-  min-height: 70vh;
-  max-height: 77.5vh;
-  transition: all 0.4s;
-  min-width: 100px; }
-  .returned-item--rtv {
-    color: #444444 !important; }
-  .returned-item--clr {
-    color: #444444 !important; }
-  .returned-item--lg {
-    color: #FFFFFF !important; }
-  .returned-item--md {
-    color: #FFFFFF !important; }
-  .returned-item--sm {
-    color: #FFFFFF !important; }
-  .returned-item--xs {
-    color: #444444 !important; }
-  .returned-item--acc {
-    color: #FFFFFF !important; }
-  .returned-item--jewelry {
-    color: #FFFFFF !important; }
-  .returned-item--dmg {
-    color: #FFFFFF !important; }
-  .returned-item--sold {
-    color: #FFFFFF !important; }
-  .returned-item::after {
-    transition: all 0.4s;
-    content: "";
-    opacity: 0.3;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0; }
-  .returned-item:hover::after {
-    opacity: 1; }
-  .returned-item--origin:hover {
-    cursor: pointer; }
-  .returned-item--origin.returned-item--done::after {
-    opacity: 0.4; }
-  .returned-item--origin::after {
-    opacity: 1; }
-  .returned-item img {
-    max-width: 480px;
-    transform: translateX(-25%); }
-  .returned-item--current {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    animation: growIn 0.4s ease-out forwards;
-    overflow: visible; }
-@keyframes growIn {
-  to {
-    min-height: 85vh;
-    min-width: 480px; } }
-    .returned-item--current::after {
-      opacity: 1; }
-  .returned-item__footer {
-    height: 10rem;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1; }
-  .returned-item__status {
-    color: #FFFFFF;
-    position: absolute;
-    transform: rotate(-10deg);
-    bottom: -6rem;
-    left: 0;
-    right: 0;
-    height: 10rem;
-    width: 130%;
-    margin-left: -15%;
-    transition: all .4s; }
-    .returned-item__status > span {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      text-align: right;
-      padding-right: 15%;
-      transform: rotate(8deg); }
-    .returned-item__status--undisclosed {
-      height: 0; }
-  .returned-item__info {
-    position: absolute;
-    bottom: -14vh;
-    left: 0;
-    right: 0;
-    height: 14vh;
-    line-height: 14vh; }
-  .returned-item__location {
-    bottom: -14vh;
-    max-height: 14vh; }
+  .returns-banner--bracelets::after {
+    background-color: #FF8000; }
+  .returns-banner--purses::after {
+    background-color: #FF8000; }

@@ -1,5 +1,9 @@
 $return-item-title-height: 15vh;
 
+.constrained {
+
+}
+
 .returns-banner {
   position: absolute;
   z-index: 0;
@@ -99,7 +103,8 @@ $return-item-title-height: 15vh;
   }
 
   img {
-    max-width: 480px;
+    max-width: 100%;
+    max-height: 100%;
     transform: translateX(-25%);
   }
 
