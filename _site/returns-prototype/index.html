@@ -30,7 +30,7 @@
   .returned-item--5::after { background-image: url(/assets/images/item_5.png); }
 </style>
 
-<ul class="returned-items-list">
+<ul class="returned-items-list" data-item-location="3 items">
   <li class="returned-item"
     data-item-status   = "out"
     data-item-type     = "purses"
@@ -38,6 +38,7 @@
     data-item-location = ""
     date-item-id       = 1234567>
     <img src="/assets/images/item_1.png">
+    <div class="returned-item__indicator"></div>
   </li>
   <li class="returned-item"
     data-item-status   = "sold"
@@ -46,6 +47,7 @@
     data-item-location = ""
     date-item-id       = 1234567>
     <img src="/assets/images/item_2.png">
+    <div class="returned-item__indicator"></div>
   </li>
   <li class="returned-item"
     data-item-status   = "out"
@@ -54,6 +56,7 @@
     data-item-location = ""
     date-item-id       = 1234567>
     <img src="/assets/images/item_3.png">
+    <div class="returned-item__indicator"></div>
   </li>
   <li class="returned-item"
     data-item-status   = "out"
@@ -62,6 +65,7 @@
     data-item-location = ""
     date-item-id       = 1234567>
     <img src="/assets/images/item_4.png">
+    <div class="returned-item__indicator"></div>
   </li>
   <li class="returned-item"
     data-item-status   = "sold"
@@ -70,6 +74,7 @@
     data-item-location = ""
     date-item-id       = 1234567>
     <img src="/assets/images/item_5.png">
+    <div class="returned-item__indicator"></div>
   </li>
 </ul>
 <footer class="return-info bounceInUp animated"></footer>
@@ -121,13 +126,31 @@
     		$(".returned-item:nth-child(5)").click();
     	}
     	else if(e.keyCode==55){
-        set_dmg($(".returned-item--current"));
+        if ( $(".returned-item--current").length ) {
+          set_dmg($(".returned-item--current"));
+        }
     	}
     	else if(e.keyCode==56){
-        sold($(".returned-item--current"));
+        if ( $(".returned-item--current").length ) {
+          sold($(".returned-item--current"));
+        }
     	}
     	else if(e.keyCode==57){
-        set_in($(".returned-item--current"));
+        if ( $(".returned-item--current").length ) {
+          set_in($(".returned-item--current"));
+        }
+    	}
+    	else if(e.keyCode==48){
+        if ( $(".returned-item--done").length == 5 ) {
+          $(".returned-item").removeClass("returned-item--current");
+          $(".returns-banner").removeClass().addClass("returns-banner returns-banner--done");
+          $("body").removeClass().addClass("done");
+          $(".return-info").removeClass().addClass("return-info").width("100%").offset({ left: 0 });
+          $(".return-info").addClass("return-info--double-lined").html("<span><strong>return processed!</strong><br>Scan next shipment to continue</span>")
+        }
+        else {
+          alert("not done");
+        }
     	}
     });
 
@@ -167,6 +190,8 @@
 
     done_items = $(".returned-item--done");
     $(".returned-items-list").append(done_items, $(".returned-item:not('.returned-item--done')"));
+
+    write_location($(".returned-items-list"), false);
   }
 
   function set_dmg(e) {
@@ -220,17 +245,15 @@
   function item_status() {
     $(".returned-item").each( function () {
       status = $(this).data("item-status");
-      indicator = $(this).find(".returned-item__status");
+      indicator = $(this).find(".returned-item__indicator");
       if (status == "sold") {
-        indicator.removeClass("returned-item__status--undisclosed");
-        indicator.find("span").text("$");
+        indicator.removeClass("returned-item__indicator--in").addClass("returned-item__indicator returned-item__indicator--sold bounceInUp active animated");
       }
       else if (status == "" || status == "out") {
-        indicator.addClass("returned-item__status--undisclosed");
+        indicator.removeClass().addClass("returned-item__indicator");
       }
       else if (status != "out") {
-        indicator.removeClass("returned-item__status--undisclosed");
-        indicator.find("span").text("√");
+        indicator.removeClass("returned-item__indicator--sold").addClass("returned-item__indicator returned-item__indicator--in bounceInUp active animated");
       }
     });
   }
@@ -264,10 +287,13 @@
       target.width(width).offset({ left: offset.left });
     }
     if (loc == "purses"){
-      target.addClass("return-info--double-lined").html("purses<br><span>& scarves</span>")
+      target.addClass("return-info--double-lined").html("<span><strong>purses</strong><br>& scarves</span>")
     }
     else if (loc == "bracelets"){
-      target.addClass("return-info--double-lined").html("bracelets<br><span>& earrings</span>")
+      target.addClass("return-info--double-lined").html("<span><strong>bracelets</strong><br>& earrings</span>")
+    }
+    else if (loc == "1 item" || loc == "2 items" || loc == "3 items" || loc == "4 items" || loc == "5 items" ){
+      target.addClass("return-info--double-lined").html("<span><strong>"+loc+"</strong><br>in this shipment</span>")
     }
     else {
       target.removeClass("return-info--double-lined").html(loc);
@@ -275,8 +301,7 @@
     // Some silly js horseshit that reruns a CSS animation. God.
     target.removeClass('bounceInUp');
     setTimeout(
-        function(){target.addClass('bounceInUp')}
-        , 1);
+        function(){target.addClass('bounceInUp')}, 1);
 
     $(".returned-item--current").removeClass("returned-item--sold returned-item--lg returned-item--md returned-item--sm returned-item--xs returned-item--dmg returned-item--jewelry returned-item--clr returned-item--acc returned-item--rtv").addClass("returned-item--"+e.data("item-location"));
   }

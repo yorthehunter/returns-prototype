@@ -18,8 +18,9 @@ body {
   @extend %list-unstyled !optional;
 
   .returned-item {
-    overflow: hidden;
-    height: 80vh;
+    overflow:   hidden;
+    height:     80vh;
+    max-height: 720px;
     margin: 0;
     position: relative;
 
@@ -28,7 +29,6 @@ body {
     justify-content: center;
 
     &--current {
-      opacity:   1.0 !important;
       min-width: 480px;
       height:    85vh;
 
@@ -37,10 +37,12 @@ body {
 
       &:last-child  { margin-right: 0; }
       &:first-child { margin-left:  0; }
+
+      img { opacity: 1.0 !important; }
     }
 
     &--done {
-      opacity: 0.4;
+      img { opacity: 0.3; }
     }
 
     img {
@@ -57,26 +59,68 @@ body {
       left:    0;
       right:   0;
     }
+
+    &__indicator {
+      width:  96px;
+      height: 240px;
+      background-image: url('/assets/images/indicator.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      bottom: -240px;
+      left:    50%;
+      margin-left: -48px;
+      transition: all 0.4s cubic-bezier(.87,-.81,.19,1.84);
+
+      &::after {
+        content: '';
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:  96px;
+        height: 96px;
+        display: block;
+      }
+
+      &--in::after {
+        background-image: url('/assets/images/checkmark.svg');
+      }
+
+      &--sold::after {
+        background-image: url('/assets/images/dollar_sign.svg');
+      }
+
+      &.active,
+      &.done {
+        bottom: -100px;
+      }
+    }
   }
 }
 
 .return-info {
   height:      calc(15vh - #{$returns_base_padding});
-  line-height: calc(15vh - #{$returns_base_padding});
   text-align: center;
-  @extend %uppercase !optional;
+  @extend %uppercase, %thick !optional;
   font-size: calc(12vh - #{$returns_base_padding});
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &--double-lined {
-    font-size: calc(6vh - #{$returns_base_padding});
-    line-height: calc(6vh - #{$returns_base_padding});
+    strong {
+      font-size: calc(7vh - #{$returns_base_padding});
+    }
 
-    & > span {
-      @extend %small, %thin !optional;
+    span {
+      font-size: calc(5vh - #{$returns_base_padding});
+      @extend %thin !optional;
     }
   }
 }
 
+body.done      .return-info,
 body.sold      .return-info,
 body.dmg       .return-info,
 body.necklaces .return-info,
@@ -127,4 +171,8 @@ body.lg        .return-info{
   &--necklaces::after { background-color: $base-acc; }
   &--bracelets::after { background-color: $base-acc; }
   &--purses::after    { background-color: $base-acc; }
+  &--done::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(229,93,136,1) 0%, rgba(95,195,228,1) 100%);
+  }
 }

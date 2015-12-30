@@ -571,7 +571,6 @@ sup {
 sub {
   bottom: -0.25rem; }
 
-.return-info--double-lined > span,
 small,
 .small {
   font-size: 0.8em;
@@ -605,10 +604,11 @@ small,
 .dark {
   color: black; }
 
-.return-info--double-lined > span,
+.return-info--double-lined span,
 .thin {
   font-weight: 300; }
 
+.return-info,
 .thick {
   font-weight: 700; }
 
@@ -4659,13 +4659,13 @@ body {
   .returned-items-list .returned-item {
     overflow: hidden;
     height: 80vh;
+    max-height: 720px;
     margin: 0;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center; }
     .returned-items-list .returned-item--current {
-      opacity: 1.0 !important;
       min-width: 480px;
       height: 85vh;
       margin-left: 10px;
@@ -4674,8 +4674,10 @@ body {
         margin-right: 0; }
       .returned-items-list .returned-item--current:first-child {
         margin-left: 0; }
-    .returned-items-list .returned-item--done {
-      opacity: 0.4; }
+      .returned-items-list .returned-item--current img {
+        opacity: 1.0 !important; }
+    .returned-items-list .returned-item--done img {
+      opacity: 0.3; }
     .returned-items-list .returned-item img {
       max-height: 720px;
       min-width: 480px; }
@@ -4687,16 +4689,45 @@ body {
       overflow: hidden;
       left: 0;
       right: 0; }
+    .returned-items-list .returned-item__indicator {
+      width: 96px;
+      height: 240px;
+      background-image: url("/assets/images/indicator.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      bottom: -240px;
+      left: 50%;
+      margin-left: -48px;
+      transition: all 0.4s cubic-bezier(0.87, -0.81, 0.19, 1.84); }
+      .returned-items-list .returned-item__indicator::after {
+        content: '';
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 96px;
+        height: 96px;
+        display: block; }
+      .returned-items-list .returned-item__indicator--in::after {
+        background-image: url("/assets/images/checkmark.svg"); }
+      .returned-items-list .returned-item__indicator--sold::after {
+        background-image: url("/assets/images/dollar_sign.svg"); }
+      .returned-items-list .returned-item__indicator.active, .returned-items-list .returned-item__indicator.done {
+        bottom: -100px; }
 
 .return-info {
   height: calc(15vh - 10px);
-  line-height: calc(15vh - 10px);
   text-align: center;
-  font-size: calc(12vh - 10px); }
-  .return-info--double-lined {
-    font-size: calc(6vh - 10px);
-    line-height: calc(6vh - 10px); }
+  font-size: calc(12vh - 10px);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .return-info--double-lined strong {
+    font-size: calc(7vh - 10px); }
+  .return-info--double-lined span {
+    font-size: calc(5vh - 10px); }
 
+body.done .return-info,
 body.sold .return-info,
 body.dmg .return-info,
 body.necklaces .return-info,
@@ -4751,3 +4782,6 @@ body.lg .return-info {
     background-color: #FF8000; }
   .returns-banner--purses::after {
     background-color: #FF8000; }
+  .returns-banner--done::after {
+    right: 0;
+    background: linear-gradient(to right, #e55d88 0%, #5fc3e4 100%); }

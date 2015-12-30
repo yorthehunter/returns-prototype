@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1280px" height="800px" viewBox="0 0 1280 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>indicator</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="v6.3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="indicator" sketch:type="MSArtboardGroup" fill-opacity="0.5" fill="#000000">
+            <path d="M760,352.298345 L550,352 C550,352 526.951436,352.590739 527.262536,375.951542 C527.476523,392.020015 520.530876,399.738064 520,399.738064 C520.530876,399.738065 527.460759,408.395389 527.262536,423.809049 C526.951436,448 548.695847,447.627528 550,448 L760,448 L760,352.298345 Z" id="Fill-1-Copy-7" sketch:type="MSShapeGroup" transform="translate(640.000000, 400.000000) rotate(-270.000000) translate(-640.000000, -400.000000) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1280px" height="800px" viewBox="0 0 1280 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M39.9551667,0.382023121 L14.3168333,27.0577457 L1.96383333,14.2049133 C1.49766667,13.7198844 0.5655,13.7198844 0.332333333,14.2049133 L0.332333333,14.2049133 C0.0991666667,14.6899422 0.0991666667,15.4175723 0.332333333,15.9026012 L0.332333333,15.9026012 L13.3845,29.7253179 C13.6176667,29.9677457 14.0836667,29.9677457 14.3168333,29.9677457 L14.3168333,29.9677457 C14.783,29.9677457 15.0161667,29.7253179 15.2491667,29.4827168 L15.2491667,29.4827168 L41.5865,2.07971098 C42.0526667,1.59468208 42.0526667,0.867225434 41.5865,0.382023121 L41.5865,0.382023121 C41.3535,0.139595376 41.0621667,0.0183815029 40.7708333,0.0183815029 L40.7708333,0.0183815029 C40.4795,0.0183815029 40.1881667,0.139595376 39.9551667,0.382023121 L39.9551667,0.382023121 Z"></path>
+    </defs>
+    <g id="v6.3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="checkmark" sketch:type="MSArtboardGroup">
+            <g id="Group-9" sketch:type="MSLayerGroup" transform="translate(619.000000, 386.000000)">
+                <mask id="mask-2" sketch:name="Clip 8" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-8"></g>
+                <path d="M-11.4961667,-12.1068208 L53.59,-12.1068208 L53.59,42.0931214 L-11.4961667,42.0931214 L-11.4961667,-12.1068208 Z" id="Fill-7" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
