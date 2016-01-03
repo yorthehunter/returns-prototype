@@ -2,14 +2,16 @@ $returns-base-padding:        10px;
 $return-item-default-height:  75vh;
 $return-item-enlarged-height: 85vh;
 
-$base-rtv: #FFDB00;
-$base-clr: #37E3E4;
-$base-dmg: #555555;
-$base-lg:  #D50000;
-$base-md:  #0000FF;
-$base-sm:  #FF00FF;
-$base-xs:  #00FF00;
-$base-acc: #FF8000;
+$base-rtv:     #FFDB00;
+$base-clr:     #37E3E4;
+$base-dmg:     #555555;
+$base-lg:      #D50000;
+$base-md:      #0000FF;
+$base-sm:      #FF00FF;
+$base-xs:      #00FF00;
+$base-acc:     #FF8000;
+$base-label:   #ACAAFE;
+$base-tangled: #C5C5C5;
 
 %flex-centered {
   display: flex;
@@ -180,6 +182,8 @@ body.l         .return-info{
   &--s::after   { background-color: $base-sm; }
   &--xs::after  { background-color: $base-xs; }
   &--acc::after { background-color: $base-acc; }
+  &--label::after     { background-color: $base-label; }
+  &--tangled::after   { background-color: $base-tangled; }
   &--necklaces::after { background-color: $base-acc; }
   &--bracelets::after { background-color: $base-acc; }
   &--purses::after    { background-color: $base-acc; }

@@ -28,7 +28,7 @@
     data-item-type     = "purses"
     data-item-override = ""
     data-item-location = ""
-    date-item-id       = 1234567>
+    data-item-id       = 1234567>
     <img src="/assets/images/item_1.png">
     <div class="returned-item__indicator"></div>
   </li>
@@ -37,7 +37,7 @@
     data-item-override = ""
     data-item-type     = "l / xl"
     data-item-location = ""
-    date-item-id       = 1234567>
+    data-item-id       = 1234567>
     <img src="/assets/images/item_2.png">
     <div class="returned-item__indicator"></div>
   </li>
@@ -46,7 +46,7 @@
     data-item-type     = "m"
     data-item-override = ""
     data-item-location = ""
-    date-item-id       = 1234567>
+    data-item-id       = 1234567>
     <img src="/assets/images/item_3.png">
     <div class="returned-item__indicator"></div>
   </li>
@@ -55,7 +55,7 @@
     data-item-type     = "s"
     data-item-override = "rtv"
     data-item-location = ""
-    date-item-id       = 1234567>
+    data-item-id       = 1234567>
     <img src="/assets/images/item_4.png">
     <div class="returned-item__indicator"></div>
   </li>
@@ -64,7 +64,7 @@
     data-item-type     = "xs"
     data-item-override = ""
     data-item-location = ""
-    date-item-id       = 1234567>
+    data-item-id       = 1234567>
     <img src="/assets/images/item_5.png">
     <div class="returned-item__indicator"></div>
   </li>
@@ -139,6 +139,16 @@
         else {
           alert("not done");
         }
+      }
+      else if(e.keyCode==187){
+        if ( $(".returned-item--current").length ) {
+          set_tangled($(".returned-item--current"));
+        }
+    	}
+      else if(e.keyCode==189){
+        if ( $(".returned-item--current").length ) {
+          set_label($(".returned-item--current"));
+        }
     	}
     });
 
@@ -189,6 +199,38 @@
     }
     else {
       e.data("item-override", "dmg");
+      override = e.data("item-override");
+      e.data("item-location", override);
+      color_banner();
+    }
+    e.data("item-status", "in");
+    write_location(e, e.data("item-type"));
+    item_status();
+  }
+
+  function set_label(e) {
+    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
+    }
+    else if (e.data("item-override") == "dmg"){
+    }
+    else {
+      e.data("item-override", "label");
+      override = e.data("item-override");
+      e.data("item-location", override);
+      color_banner();
+    }
+    e.data("item-status", "in");
+    write_location(e, e.data("item-type"));
+    item_status();
+  }
+
+  function set_tangled(e) {
+    if (e.data("item-override") == "rtv" || e.data("item-override") == "clr") {
+    }
+    else if (e.data("item-override") == "dmg"){
+    }
+    else {
+      e.data("item-override", "tangled");
       override = e.data("item-override");
       e.data("item-location", override);
       color_banner();
@@ -252,10 +294,7 @@
       override = $(this).data("item-override");
       type     = $(this).data("item-type");
 
-      if (override == "rtv" || override == "clr") {
-        $(this).data("item-location", override);
-      }
-      else if (override == "dmg") {
+      if (override == "rtv" || override == "clr" || override == "dmg" || override == "label") {
         $(this).data("item-location", override);
       }
       else {
@@ -271,11 +310,18 @@
     width  = $(".returned-item--current").width();
     offset = $(".returned-item--current").offset();
     target = $(".return-info");
+    item_id= $(".returned-item--current").data("item-id");
     if (offset != null) {
       target.width(width).offset({ left: offset.left });
     }
     if (loc == "purses"){
       target.addClass("return-info--double-lined").html("<span><strong>purses</strong><br>& scarves</span>")
+    }
+    else if (loc == "tangled"){
+      target.addClass("return-info--double-lined").html("<span><strong>tangled</strong><br>ID: "+item_id+"</span>")
+    }
+    else if (loc == "label"){
+      target.addClass("return-info--double-lined").html("<span><strong>re-label</strong><br>ID: "+item_id+"</span>")
     }
     else if (loc == "bracelets"){
       target.addClass("return-info--double-lined").html("<span><strong>bracelets</strong><br>& earrings</span>")

@@ -4781,6 +4781,10 @@ body.l .return-info {
     background-color: #00FF00; }
   .returns-banner--acc::after {
     background-color: #FF8000; }
+  .returns-banner--label::after {
+    background-color: #ACAAFE; }
+  .returns-banner--tangled::after {
+    background-color: #C5C5C5; }
   .returns-banner--necklaces::after {
     background-color: #FF8000; }
   .returns-banner--bracelets::after {
