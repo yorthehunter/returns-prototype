@@ -591,6 +591,7 @@ small,
 .text-l {
   text-align: left   !important; }
 
+.return-info,
 .text-c {
   text-align: center !important; }
 
@@ -2251,6 +2252,7 @@ development environment.
 .pos-abs {
   position: absolute; }
 
+.returned-items-list .returned-item,
 .pos-rel {
   position: relative; }
 
@@ -4645,6 +4647,10 @@ stylesheets
 .bounceInUp {
   animation-name: bounceInUp; }
 
+.returned-items-list, .returned-items-list .returned-item, .return-info {
+  display: flex;
+  justify-content: center; }
+
 body {
   background: transparent; }
 
@@ -4652,22 +4658,16 @@ body {
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  margin: 0;
-  display: flex;
-  align-items: top;
-  justify-content: center; }
+  margin: 0; }
   .returned-items-list .returned-item {
     overflow: hidden;
-    height: 80vh;
-    max-height: 720px;
+    height: 75vh;
     margin: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+    align-items: center; }
     .returned-items-list .returned-item--current {
       min-width: 480px;
       height: 85vh;
+      background-color: white;
       margin-left: 10px;
       margin-right: 10px; }
       .returned-items-list .returned-item--current:last-child {
@@ -4716,12 +4716,9 @@ body {
 
 .return-info {
   height: calc(15vh - 10px);
-  text-align: center;
   font-size: calc(12vh - 10px);
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  align-items: center; }
   .return-info--double-lined strong {
     font-size: calc(7vh - 10px); }
   .return-info--double-lined span {
@@ -4734,7 +4731,9 @@ body.necklaces .return-info,
 body.bracelets .return-info,
 body.purses .return-info,
 body.md .return-info,
-body.lg .return-info {
+body.m .return-info,
+body.lg .return-info,
+body.l .return-info {
   color: white; }
 
 .returns-banner {
@@ -4768,9 +4767,15 @@ body.lg .return-info {
     background-color: green; }
   .returns-banner--lg::after {
     background-color: #D50000; }
+  .returns-banner--l::after {
+    background-color: #D50000; }
   .returns-banner--md::after {
     background-color: #0000FF; }
+  .returns-banner--m::after {
+    background-color: #0000FF; }
   .returns-banner--sm::after {
+    background-color: #FF00FF; }
+  .returns-banner--s::after {
     background-color: #FF00FF; }
   .returns-banner--xs::after {
     background-color: #00FF00; }

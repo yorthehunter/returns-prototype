@@ -1,4 +1,20 @@
-$returns_base_padding: 10px;
+$returns-base-padding:        10px;
+$return-item-default-height:  75vh;
+$return-item-enlarged-height: 85vh;
+
+$base-rtv: #FFDB00;
+$base-clr: #37E3E4;
+$base-dmg: #555555;
+$base-lg:  #D50000;
+$base-md:  #0000FF;
+$base-sm:  #FF00FF;
+$base-xs:  #00FF00;
+$base-acc: #FF8000;
+
+%flex-centered {
+  display: flex;
+  justify-content: center;
+}
 
 
 body {
@@ -6,34 +22,28 @@ body {
 }
 
 .returned-items-list {
-  padding-top:   $returns_base_padding;
-  padding-left:  $returns_base_padding;
-  padding-right: $returns_base_padding;
+  padding-top:   $returns-base-padding;
+  padding-left:  $returns-base-padding;
+  padding-right: $returns-base-padding;
   margin: 0;
 
-  display: flex;
-  align-items: top;
-  justify-content: center;
-
-  @extend %list-unstyled !optional;
+  @extend %list-unstyled, %flex-centered !optional;
 
   .returned-item {
     overflow:   hidden;
-    height:     80vh;
-    max-height: 720px;
+    height:     $return-item-default-height;
     margin: 0;
-    position: relative;
 
-    display: flex;
+    @extend %flex-centered, %pos-rel !optional;
     align-items: center;
-    justify-content: center;
 
     &--current {
       min-width: 480px;
-      height:    85vh;
+      height:    $return-item-enlarged-height;
+      background-color: white;
 
-      margin-left:  $returns_base_padding;
-      margin-right: $returns_base_padding;
+      margin-left:  $returns-base-padding;
+      margin-right: $returns-base-padding;
 
       &:last-child  { margin-right: 0; }
       &:first-child { margin-left:  0; }
@@ -98,23 +108,20 @@ body {
 }
 
 .return-info {
-  height:      calc(15vh - #{$returns_base_padding});
-  text-align: center;
-  @extend %uppercase, %thick !optional;
-  font-size: calc(12vh - #{$returns_base_padding});
+  @extend %text-c, %uppercase, %thick, %flex-centered !optional;
+  height:    calc(15vh - #{$returns-base-padding});
+  font-size: calc(12vh - #{$returns-base-padding});
   line-height: 1;
 
-  display: flex;
   align-items: center;
-  justify-content: center;
 
   &--double-lined {
     strong {
-      font-size: calc(7vh - #{$returns_base_padding});
+      font-size: calc(7vh - #{$returns-base-padding});
     }
 
     span {
-      font-size: calc(5vh - #{$returns_base_padding});
+      font-size: calc(5vh - #{$returns-base-padding});
       @extend %thin !optional;
     }
   }
@@ -127,7 +134,9 @@ body.necklaces .return-info,
 body.bracelets .return-info,
 body.purses    .return-info,
 body.md        .return-info,
-body.lg        .return-info{
+body.m         .return-info,
+body.lg        .return-info,
+body.l         .return-info{
   color: white;
 }
 
@@ -164,8 +173,11 @@ body.lg        .return-info{
   &--dmg::after { background-color: $base-dmg; }
   &--sold::after{ background-color: green; }
   &--lg::after  { background-color: $base-lg; }
+  &--l::after   { background-color: $base-lg; }
   &--md::after  { background-color: $base-md; }
+  &--m::after   { background-color: $base-md; }
   &--sm::after  { background-color: $base-sm; }
+  &--s::after   { background-color: $base-sm; }
   &--xs::after  { background-color: $base-xs; }
   &--acc::after { background-color: $base-acc; }
   &--necklaces::after { background-color: $base-acc; }
