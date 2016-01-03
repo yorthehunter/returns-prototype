@@ -4692,7 +4692,7 @@ body {
     .returned-items-list .returned-item__indicator {
       width: 96px;
       height: 240px;
-      background-image: url("/assets/images/indicator.svg");
+      background-image: url("../assets/images/indicator.svg");
       background-repeat: no-repeat;
       background-position: center center;
       position: absolute;
@@ -4708,9 +4708,9 @@ body {
         height: 96px;
         display: block; }
       .returned-items-list .returned-item__indicator--in::after {
-        background-image: url("/assets/images/checkmark.svg"); }
+        background-image: url("../assets/images/checkmark.svg"); }
       .returned-items-list .returned-item__indicator--sold::after {
-        background-image: url("/assets/images/dollar_sign.svg"); }
+        background-image: url("../assets/images/dollar_sign.svg"); }
       .returned-items-list .returned-item__indicator.active, .returned-items-list .returned-item__indicator.done {
         bottom: -100px; }
 
